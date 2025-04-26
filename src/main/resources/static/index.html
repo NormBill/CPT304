@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html class="smart-design-mode js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+
+    <meta name="description">
+    <meta name="keywords">
+    <meta name="renderer" content="webkit">
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <title>首页</title>
+    <link rel="icon" href="https://nwzimg.wezhan.cn/Content/images/favicon.ico"><link rel="shortcut icon" href="https://nwzimg.wezhan.cn/Content/images/favicon.ico"><link rel="bookmark" href="https://nwzimg.wezhan.cn/Content/images/favicon.ico">
+    <link href="./index_files/pcstyle.css" rel="stylesheet" type="text/css">
+    <link href="./index_files/reset.css" rel="stylesheet" type="text/css">
+    <link href="./index_files/iconfont.css" rel="stylesheet" type="text/css">
+    <link href="./index_files/iconfont(1).css" rel="stylesheet" type="text/css">
+    <link href="./index_files/iconfont(2).css" rel="stylesheet" type="text/css">
+    <link href="./index_files/pager.css" rel="stylesheet" type="text/css">
+    <link href="./index_files/hover-effects.css" rel="stylesheet" type="text/css">
+    <link href="./index_files/antChain.css" rel="stylesheet" type="text/css">
+
+
+
+    <link href="./index_files/32_Pc_zh-CN.css" rel="stylesheet">
+    <script src="./index_files/jquery-3.6.3.min.js" type="text/javascript"></script>
+    <script src="./index_files/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script src="./index_files/smart.animation.min.js" type="text/javascript"></script>
+    <script src="./index_files/kino.razor.min.js" type="text/javascript"></script>
+    <script src="./index_files/common.min.js" type="text/javascript"></script>
+    <script src="./index_files/admin.validator.min.js" type="text/javascript"></script>
+    <script src="./index_files/jquery.cookie.js" type="text/javascript"></script>
+
+    <script type="text/javascript" id="jssor-all" src="./index_files/jssor.slider-22.2.16-all.min.js"></script><script type="text/javascript" id="slideshown" src="./index_files/slideshow.js"></script>
+
+    <script type="text/javascript">
+        $.ajaxSetup({
+            cache: false,
+            beforeSend: function (jqXHR, settings) {
+                settings.data = settings.data && settings.data.length > 0 ? (settings.data + "&") : "";
+                settings.data = settings.data + "__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val();
+                return true;
+            }
+        });
+    </script>
+<style type="text/css">@font-face { font-family: TencentSans; src: url("chrome-extension://lkjkfecdnfjopaeaibboihfkmhdjmanm/static/fonts/TencentSans.woff2"); }</style></head>
+<body id="smart-body" area="main" style="">
+
+    <input type="hidden" id="pageinfo" value="32" data-type="1" data-device="Pc" data-entityid="32" tm="0">
+    <input id="txtDeviceSwitchEnabled" value="show" type="hidden" tm="1">
+
+    <script type="text/javascript" tm="2">
+        $(function() {
+
+        if (""=="True") {
+        $('#mainContentWrapper').addClass('translate');
+        $('#antChainWrap').fadeIn(500);
+
+        $('#closeAntChain').off('click').on('click', function(){
+        $('#antChainWrap').fadeOut('slow',function(){
+        $('#mainContentWrapper').removeClass('translate');
+        });
+        $(document).off("scroll",isWatchScroll);
+
+        });
+        $('#showQrcodeBtn').off('click').on('click', function(){
+        $('#qrCodeWrappper').toggleClass('qrCodeShow');
+        });
+        $(document).scroll(isWatchScroll)
+        }
+
+
+        function isWatchScroll(){
+        var scroH = $(document).scrollTop();
+        if(scroH >= 80) {
+        $('#mainContentWrapper').removeClass('translate');
+        } else {
+        $('#mainContentWrapper').addClass('translate');
+        }
+        }
+
+
+        })
+    </script>
+
+<link href="./index_files/view.css" rel="stylesheet" type="text/css" tm="3">
+
+<input type="hidden" id="secUrl" data-host="c629916109zyc.scd.wezhan.cn" data-pathname="/" data-search="" data-hash="" tm="18">
+
+<script type="text/javascript" tm="19">
+    function initialDeviceSwitch() {
+        try {
+
+            $(".m-deviceSwitch").find("li[data-device=Pc]").removeClass("active").find("a").removeClass("z-current");
+            $(".m-deviceSwitch").find("li[data-device=Mobile]").removeClass("active").find("a").removeClass("z-current");
+
+            var pageinfo = $("#pageinfo");
+            var l = window.location;
+            if (pageinfo.length == 0 && window.frames.length > 0) {
+                pageinfo = $(window.frames[0].document).find("#pageinfo");
+                l = window.frames[0].document.location;
+
+
+            }
+            $(".m-deviceSwitch").show();
+            if (pageinfo.length == 0) {
+                $(".m-deviceSwitch").hide();
+                return;
+            }
+            $("#secUrl").attr("data-host", l.host).attr("data-pathname", l.pathname).attr("data-search", l.search).attr("data-hash", l.hash);
+            var pagedevice = pageinfo.attr("data-device");
+            $(".m-deviceSwitch").find("li[data-device=" + pagedevice + "]").addClass("active").find("a").addClass("z-current");
+            $(".m-deviceSwitch").find("li").not(".active").click(function () {
+                var secUrl = $("#secUrl");
+                var pathname = secUrl.attr("data-pathname");
+                var search = secUrl.attr("data-search");
+                var hash = secUrl.attr("data-hash");
+                var npagedevice = $(this).attr("data-device");
+                var flag = "yibu_IsMobileDevice=true";
+                var mobileUrl = "";
+                if (npagedevice == "Pc") {
+                    mobileUrl = mobileUrl + pathname + search.replace("deviceModel=mobile", "deviceModel=pc") + hash;
+                    mobileUrl = mobileUrl.replace("&" + flag, "").replace("?" + flag, "");
+                } else if (npagedevice == "Mobile") {
+                    var toUrl = pathname + search.replace("deviceModel=pc", "deviceModel=mobile") + hash;
+                    toUrl = toUrl.replace("&" + flag, "").replace("?" + flag, "");
+                    //if (toUrl.indexOf("?") === -1) {
+                    //    toUrl += "?" + flag;
+                    //}
+                    //else {
+                    //    toUrl += "&" + flag;
+                    //}
+
+                    mobileUrl = mobileUrl + "/Runtime/MobileContainer?url=" + encodeURIComponent(toUrl) + "&" + flag;
+                }
+                $.ajax({
+                    cache: false,
+                    url: "/Common/ChangeRunTimeDeviceMode",
+                    type: "post",
+                    data: { type: "Pc" },
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.IsSuccess) {
+                            window.top.location.href = mobileUrl;
+                        }
+                    },
+                    error: function () { }
+                });
+            });
+        }
+        catch (e) {
+            $(".m-deviceSwitch").find("li[data-device=Mobile]").addClass("active").find("a").addClass("z-current");
+        }
+    }
+    $(function () {
+        if ($("#prevMainFrame").length > 0) {
+            $("#prevMainFrame").load(initialDeviceSwitch);
+        } else {
+            initialDeviceSwitch();
+        }
+    });
+</script>                <style tm="20">
+                /*不可直接引用bootstarp,否则会对页面样式有影响*/
+                .alert {
+                    padding: 15px;
+                    margin-bottom: 20px;
+                    border: 1px solid transparent;
+                    border-radius: 4px
+                }
+
+                .alert-info {
+                    color: #31708f;
+                    background-color: #d9edf7;
+                    border-color: #bce8f1
+                }
+
+                .alert-dismissable, .alert-dismissible {
+                    padding-right: 35px
+                }
+
+                    .alert-dismissable .close, .alert-dismissible .close {
+                        position: relative;
+                        top: -5px;
+                        right: -21px;
+                        color: inherit
+                    }
+
+                button.close {
+                    -webkit-appearance: none;
+                    padding: 0;
+                    cursor: pointer;
+                    background: 0 0;
+                    border: 0
+                }
+
+                .close {
+                    float: right;
+                    font-size: 21px;
+                    font-weight: 700;
+                    line-height: 1;
+                    color: #000;
+                    text-shadow: 0 1px 0 #fff;
+                    filter: alpha(opacity=20);
+                    opacity: .2
+                }
+            </style>
+<script src="./index_files/bootstrap.min.js" type="text/javascript" tm="21"></script>            <div id="deadlineTips" class="alert alert-info alert-dismissible" style="margin-bottom: 0px; display: none; z-index: 2147483647; position: absolute; left: 0; right:0;" role="alert" tm="22">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="sessionStorage.setItem(&#39;_ptk_&#39;,&#39;true&#39;)" tm="23"><span aria-hidden="true" tm="24">×</span></button>
+                        <span style="text-align: center; display: block; " tm="25">分享给他人？请复制当前浏览器地址分享给他人，他人浏览需进行安全验证，验证方式为您的手机号，请在<b tm="26">网站后台</b>进行<b tm="27">扫码关注绑定手机号</b>用以安全验证</span>
+            </div>
+<script tm="28">
+    var token = "";
+
+            function FixHref() {
+                        $(function () {
+            $("a[href]").each(function (a, b) {
+                if (b.href.indexOf(location.host) !== -1 && b.href.indexOf("_ptk=") === -1) {
+                    //此处不能直接用b.href,否则会带上域名,导致导航条选中态异常
+                    var aHref = $(b).attr("href");
+                    var index = aHref.indexOf('#');
+                    if (index !== -1) {
+                        if (index === 0) {
+                            return;
+                        }
+                        else {
+                        var href = aHref .substr(0, index);
+                        aHref = href + (href.indexOf('?') === -1 ? "?" : "&") + "_ptk=" + token  + aHref .substr(index);
+                        }
+                    }
+                    else {
+                        aHref = aHref + (aHref.indexOf('?') === -1 ? "?" : "&") + "_ptk=" + token ;
+                    }
+                    $(b).attr("href", aHref);
+               }
+            });
+            $("[data-url]").each(function (a, b) {
+                var dataUrl = $(b).attr("data-url")||"";
+                if (dataUrl.indexOf("http") !==0&& dataUrl .indexOf("_ptk=") === -1) {
+                    var aHref = dataUrl;
+                    var index = aHref.indexOf('#');
+                    if (index !== -1) {
+                        if (index === 0) {
+                            return;
+                        }
+                        else {
+                        var href = aHref.substr(0, index);
+                        aHref = href + (href.indexOf('?') === -1 ? "?" : "&") + "_ptk=" + token + aHref .substr(index);
+                        }
+                    }
+                    else {
+                        aHref = aHref + (aHref.indexOf('?') === -1 ? "?" : "&") + "_ptk=" + token ;
+                    }
+                    $(b).attr("data-url", aHref);
+               }
+            });
+        });
+    }
+
+    function InIframe() {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+    }
+
+    function ShowTips() {
+        var val = sessionStorage.getItem("_ptk_");
+        if (!val && !InIframe()) {
+         $("#deadlineTips").show();
+        }
+    }
+    if (token) {
+        FixHref();
+        ShowTips();
+    }
+</script>
+
+
+    <div id="mainContentWrapper" style="background-color: transparent; background-image: none; background-repeat: no-repeat;background-position:0 0; background:-moz-linear-gradient(top, none, none);background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));background:-o-linear-gradient(top, none, none);background:-ms-linear-gradient(top, none, none);background:linear-gradient(top, none, none);;
+     position: relative; width: 100%;min-width:1000px;background-size: auto;" bgscroll="none" tm="29" oriwidth="1432px" oriminwidth="1000px">
+    <div style="background-color: rgb(255, 255, 255); background-image: none; background-repeat: no-repeat;background-position:0 0; background:-moz-linear-gradient(top, none, none);background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));background:-o-linear-gradient(top, none, none);background:-ms-linear-gradient(top, none, none);background:linear-gradient(top, none, none);;
+         position: relative; width: 100%;min-width:1000px;background-size: auto;" bgscroll="none" tm="30" oriwidth="1432px" oriminwidth="1000px">
+        <div class=" header" cpid="1133606" id="smv_Area0" style="width: 1000px; height: 521px;  position: relative; margin: 0 auto" tm="31" oriwidth="1000px" oriminwidth="0px">
+            <div id="smv_tem_1_48" ctype="nav" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style7" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 34px; width: 574px; left: 131px; top: 42px;z-index:2;" tm="32" ctrl-location="header"><div class="yibuFrameContent tem_1_48  nav_Style7  " style="overflow:visible;;" tm="33"><div id="nav_tem_1_48" class="nav_pc_t_7" tm="34">
+
+</div>
+<script tm="66">
+    $(function () {
+        $('#nav_tem_1_48 .w-nav').find('.w-subnav').hide();
+        var $this, item, itemAll;
+
+        if ("True".toLocaleLowerCase() == "true") {
+        } else {
+            $("#nav_tem_1_48 .w-subnav").css("width", "auto" + "px");
+        }
+
+        $('#nav_tem_1_48 .w-nav').off('mouseenter').on('mouseenter', '.w-nav-inner', function () {
+            itemAll = $('#nav_tem_1_48 .w-nav').find('.w-subnav');
+            $this = $(this);
+            item = $this.find('.w-subnav');
+            item.slideDown();
+        }).off('mouseleave').on('mouseleave', '.w-nav-inner', function () {
+            item = $(this).find('.w-subnav');
+            item.stop().slideUp();
+        });
+        SetNavSelectedStyle('nav_tem_1_48');//选中当前导航
+    });
+</script></div></div><div id="smv_tem_46_52" ctype="slideset" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="" tareaid="Area0" re-direction="y" daxis="Y" isdeletable="True" style="height: 417px; width: 1000px; left: 0px; top: 104px;z-index:12;" selectarea="Area0" tm="67" ctrl-location="header"><div class="yibuFrameContent tem_46_52  slideset_Style1  " style="overflow:visible;;" tm="68">
+<!--w-slide-->
+<div id="lider_smv_tem_46_52_wrapper" tm="69">
+    <div class="w-slide" id="slider_smv_tem_46_52" data-jssor-slider="1" tm="70" style="left: -216px; width: 1432px; visibility: visible; height: 417px;">
+        <div style="position: absolute; display: block; top: 0px; left: 0px; width: 1432px; height: 417px;" tm="71"><div style="position: absolute; display: block; top: 0px; left: 0px; width: 1432px; height: 417px;" data-scale-ratio="1" tm="72"><div class="w-slide-inner" data-u="slides" style="width: 1432px; z-index: 0; position: absolute; top: 0px; left: 0px;" tm="73"><div tm="74" style="top: 0px; left: 0px; width: 1432px; height: 417px; position: absolute; z-index: 0; pointer-events: none;"></div></div><div class="w-slide-inner" data-u="slides" style="width: 1432px; z-index: 0; position: absolute; overflow: hidden; top: 0px; left: 0px;" tm="75"><div tm="76" style="top: 0px; left: 0px; width: 1432px; height: 417px; position: absolute; background-color: rgb(0, 0, 0); opacity: 0; z-index: 0;"></div>
+
+                <div class="content-box" data-area="Area0" tm="77" style="z-index: 1; top: 0px; left: 0px; width: 1432px; height: 417px; position: absolute; overflow: hidden;">
+                    <div id="smc_Area0" cid="tem_46_52" class="smAreaC slideset_AreaC" tm="78" oriwidth="1000px" oriminwidth="0px" style="z-index: 1; width: 1000px; position: relative; margin: 0px auto;">
+                        <div id="smv_tem_68_47" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_46_52" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 284px; width: 509px; left: 245px; top: 56px; z-index: 23;" tm="79" ctrl-location="header"><div class="yibuFrameContent tem_68_47  area_Style1  " style="overflow: visible; z-index: 1;" tm="80"><div class="w-container" data-effect-name="enterTop" tm="81" style="z-index: 1;">
+    <div class="smAreaC" id="smc_Area0" cid="tem_68_47" tm="82" style="z-index: 1;">
+        <div id="smv_tem_62_9" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_68_47" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 110px; width: 470px; left: 19px; top: 7px; z-index: 25;" tm="83" ctrl-location="header"><div class="yibuFrameContent tem_62_9  text_Style1  " style="overflow: hidden; z-index: 1;" tm="84"><div id="txt_tem_62_9" style="height: 100%; z-index: 1;" tm="85">
+    <div class="editableContent" id="txtc_tem_62_9" style="height: 100%; overflow-wrap: break-word; z-index: 1;" tm="86">
+        <p style="text-align: center; z-index: 1;" tm="87"><span style="font-size: 48px; z-index: 1;" tm="88"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="89"><span style="line-height: 1.5; z-index: 1;" tm="90"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="91">Made with love</span></span></span></span></p>
+
+<p style="text-align: center; z-index: 1;" tm="92"><span style="font-size: 24px; z-index: 1;" tm="93"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="94"><span style="line-height: 1.5; z-index: 1;" tm="95"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="96">用心做</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="97" style="z-index: 1;">
+    var tables = $(' #smv_tem_62_9').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_tem_65_25" ctype="button" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item2" areaid="Area0" iscontainer="False" pvid="tem_68_47" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 37px; width: 124px; left: 192px; top: 235px; z-index: 24;" tm="98" ctrl-location="header"><div class="yibuFrameContent tem_65_25  button_Style1  " style="overflow: visible; z-index: 1;" tm="99"><a target="_self" href="#" class="w-button f-ellipsis" style="width: 124px; height: 37px; line-height: 37px; z-index: 1;" tm="100">
+    <span class="w-button-position" tm="101" style="z-index: 1;">
+        <em class="w-button-text f-ellipsis" tm="102" style="z-index: 1;">
+            <i class="mw-iconfont w-button-icon w-icon-hide" tm="103" style="z-index: 1;"></i>OUR MENU
+        </em>
+    </span>
+</a>
+    <script type="text/javascript" tm="104" style="z-index: 1;">
+        $(function () {
+        });
+    </script>
+</div></div><div id="smv_tem_63_21" ctype="line" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_68_47" tareaid="Area0" re-direction="x" daxis="All" isdeletable="True" style="height: 20px; width: 180px; left: 164px; top: 118px; z-index: 27;" tm="105" ctrl-location="header"><div class="yibuFrameContent tem_63_21  line_Style1  " style="overflow: visible; z-index: 1;" tm="106"><!-- w-line -->
+<div style="position: relative; height: 100%; z-index: 1;" tm="107">
+    <div class="w-line" style="position: absolute; top: 50%; z-index: 1;" linetype="horizontal" tm="108"></div>
+</div>
+</div></div><div id="smv_tem_64_13" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="tem_68_47" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 81px; width: 473px; left: 18px; top: 141px; z-index: 26;" tm="109" ctrl-location="header"><div class="yibuFrameContent tem_64_13  text_Style1  " style="overflow: hidden; z-index: 1;" tm="110"><div id="txt_tem_64_13" style="height: 100%; z-index: 1;" tm="111">
+    <div class="editableContent" id="txtc_tem_64_13" style="height: 100%; overflow-wrap: break-word; z-index: 1;" tm="112">
+        <p style="text-align: center; z-index: 1;" tm="113"><span style="line-height: 1.5; z-index: 1;" tm="114"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="115"><span style="font-size: 16px; z-index: 1;" tm="116"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="117">Green onion,ginger and farlic are</span></span></span></span></p>
+
+<p style="text-align: center; z-index: 1;" tm="118"><span style="line-height: 1.5; z-index: 1;" tm="119"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="120"><span style="font-size: 16px; z-index: 1;" tm="121"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="122">ChineseFavorite flavor of vegetables to say to in a day</span></span></span></span></p>
+
+<p style="text-align: center; z-index: 1;" tm="123"><span style="line-height: 1.5; z-index: 1;" tm="124"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="125"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="126"><span style="font-size: 16px; z-index: 1;" tm="127">Essential in the kitchen</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="128" style="z-index: 1;">
+    var tables = $(' #smv_tem_64_13').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div>    </div>
+</div></div></div>                    </div>
+                    <div class="content-box-inner" style="background-image: url(&quot;//ntemimg.wezhan.cn/contents/sitefiles2000/10000149/images/-1172.png&quot;); background-position: 50% 50%; background-repeat: repeat; background-size: cover; background-color: rgb(0, 0, 0); opacity: 1; z-index: 1;" tm="129"></div>
+
+                <div style="top: 0px; left: 0px; width: 1432px; height: 417px; z-index: 1000; display: none;" tm="130"></div></div>
+                <div class="content-box" data-area="Area2" tm="131" style="z-index: 1; top: 0px; left: 1432px; width: 1432px; height: 417px; position: absolute; overflow: hidden;">
+                    <div id="smc_Area2" cid="tem_46_52" class="smAreaC slideset_AreaC" tm="132" oriwidth="1000px" oriminwidth="0px" style="z-index: 1; width: 1000px; position: relative; margin: 0px auto;">
+                        <div id="smv_tem_66_17" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area2" iscontainer="True" pvid="tem_46_52" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 119px; width: 549px; left: 225px; top: 128px; z-index: 3;" tm="133" ctrl-location="header"><div class="yibuFrameContent tem_66_17  area_Style1  " style="overflow: visible; z-index: 1;" tm="134"><div class="w-container" data-effect-name="enterTop" tm="135" style="z-index: 1;">
+    <div class="smAreaC" id="smc_Area0" cid="tem_66_17" tm="136" style="z-index: 1;">
+        <div id="smv_tem_67_56" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_66_17" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 112px; width: 360px; left: 94px; top: 23px; z-index: 3;" tm="137" ctrl-location="header"><div class="yibuFrameContent tem_67_56  text_Style1  " style="overflow: hidden; z-index: 1;" tm="138"><div id="txt_tem_67_56" style="height: 100%; z-index: 1;" tm="139">
+    <div class="editableContent" id="txtc_tem_67_56" style="height: 100%; overflow-wrap: break-word; z-index: 1;" tm="140">
+        <p style="text-align: center; z-index: 1;" tm="141"><span style="line-height: 1.75; z-index: 1;" tm="142"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="143"><span style="font-size: 22px; z-index: 1;" tm="144"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="145">8道食谱然让你品尝彩虹的味道</span></span></span></span></p>
+
+<p style="text-align: center; z-index: 1;" tm="146"><span style="font-size: 18px; z-index: 1;" tm="147"><span style="line-height: 1.75; z-index: 1;" tm="148"><span style="color: rgb(255, 255, 255); z-index: 1;" tm="149"><span style="font-family: &quot;Microsoft YaHei&quot;; z-index: 1;" tm="150">Taste the delicious rainbow</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="151" style="z-index: 1;">
+    var tables = $(' #smv_tem_67_56').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div>    </div>
+</div></div></div>                    </div>
+                    <div class="content-box-inner" style="background-image: url(&quot;//ntemimg.wezhan.cn/contents/sitefiles2000/10000149/images/-2028.png&quot;); background-repeat: repeat; background-size: cover; background-color: rgb(0, 0, 0); opacity: 1; z-index: 1;" tm="152"></div>
+
+                <div style="top: 0px; left: 0px; width: 1432px; height: 417px; z-index: 1000; display: none;" tm="153"></div></div>
+        </div></div></div>
+        <!-- Bullet Navigator -->
+        <div tm="154" style="position: absolute; display: block; right: 16px; bottom: 16px; left: 696px; width: 40px; height: 15px;"><div data-u="navigator" class="w-slide-btn-box " data-autocenter="1" data-scale-ratio="1" tm="155" style="width: 40px; left: 0px; height: 15px; top: 0px;">
+            <!-- bullet navigator item prototype -->
+
+        <div class="w-slide-btn w-slide-btnav" data-u="prototype" data-jssor-button="1" tm="156" style="position: absolute; left: 0px; top: 0px;"></div><div class="w-slide-btn" data-u="prototype" data-jssor-button="1" tm="157" style="position: absolute; left: 25px; top: 0px;"></div></div></div>
+
+        <!-- 1Arrow Navigator -->
+        <div tm="158" style="position: absolute; display: block; top: 199.5px; left: 10px; width: 18px; height: 18px;"><span data-u="arrowleft" class="w-slide-arrowl slideArrow" data-autocenter="2" id="left_tem_46_52" data-jssor-button="1" data-scale-ratio="1" tm="159" style="top: -20px; left: 0px;">
+            <i class="w-itemicon mw-iconfont" tm="160">넳</i>
+        </span></div>
+        <div tm="161" style="position: absolute; display: block; top: 199.5px; right: 10px; width: 18px; height: 18px;"><span data-u="arrowright" class="w-slide-arrowr slideArrow" data-autocenter="2" id="right_tem_46_52" data-jssor-button="1" data-scale-ratio="1" tm="162" style="top: -20px; left: 0px;">
+            <i class="w-itemicon mw-iconfont" tm="163">넲</i>
+        </span></div>
+    </div>
+</div>
+
+<!--/w-slide-->
+<script type="text/javascript" tm="164">
+       var jssorCache_tem_46_52  = {
+            CtrlId:"tem_46_52",
+            SliderId: "slider_smv_tem_46_52",
+           Html:$("#slider_smv_tem_46_52")[0].outerHTML,
+    };
+    var slide_tem_46_52;
+        var slideAnimation_tem_46_52 =  function (slideIndex, fromIndex) {
+            var $slideWrapper = $("#slider_smv_tem_46_52 .w-slide-inner:last");
+            var $fromSlide = $slideWrapper.find(".content-box:eq(" + fromIndex + ")");
+            var $curSlide = $slideWrapper.find(".content-box:eq(" + slideIndex + ")");
+            var $nextSlide = $slideWrapper.find(".content-box:eq(" + (slideIndex+1) + ")");
+            $("#smv_tem_46_52").attr("selectArea", $curSlide.attr("data-area"));
+
+            $slideWrapper.find(".animated").smanimate("stop");
+            $fromSlide.find(".animated").smanimate("stop");
+            $curSlide.find(".animated").smanimate("stop");
+            $nextSlide.find(".animated").smanimate("stop");
+            $("#switch_tem_46_52 .page").html(slideIndex + 1);
+           // debugger
+            $curSlide.find(".animated").smanimate("replay");
+            return false;
+        }
+    tem_46_52_page = 1;
+    tem_46_52_sliderset3_init = function () {
+        var jssor_1_options_tem_46_52 = {
+            $AutoPlay: "False"=="True"?false:"on" == "on",//自动播放
+            $PlayOrientation: 1,//2为向上滑，1为向左滑
+            $Loop: 1,//循环
+            $Idle: parseInt("1500"),//切换间隔
+            $SlideDuration: "800",//延时
+            $SlideEasing: $Jease$.$OutQuint,
+
+            $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: GetSlideAnimation("1", "800"),
+            },
+
+            $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+            },
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $ActionMode: "1"
+            }
+        };
+
+        //初始化幻灯
+        var slide = slide_tem_46_52 = new $JssorSlider$("slider_smv_tem_46_52", jssor_1_options_tem_46_52);
+        if (typeof (LayoutConverter) !== "undefined") {
+            jssorCache_tem_46_52 .JssorOpt= jssor_1_options_tem_46_52,
+            jssorCache_tem_46_52 .Jssor = slide;
+        }
+        $('#smv_tem_46_52').data('jssor_slide', slide);
+
+        //resize游览器的时候触发自动缩放幻灯秀
+        //幻灯栏目自动或手动切换时触发的事件
+        slide.$On($JssorSlider$.$EVT_PARK,slideAnimation_tem_46_52);
+        //切换栏点击事件
+        $("#switch_tem_46_52 .left").unbind("click").click(function () {
+            if(tem_46_52_page==1){
+                tem_46_52_page =2;
+            } else {
+                tem_46_52_page = tem_46_52_page - 1;
+            }
+            $("#switch_tem_46_52 .page").html(tem_46_52_page);
+            slide.$Prev();
+            return false;
+        });
+        $("#switch_tem_46_52 .right").unbind("click").click(function () {
+            if(tem_46_52_page==2){
+                tem_46_52_page = 1;
+        } else {
+        tem_46_52_page = tem_46_52_page + 1;
+    }
+    $("#switch_tem_46_52 .page").html(tem_46_52_page);
+    slide.$Next();
+    return false;
+    });
+    };
+
+
+    $(function () {
+
+        var jssorCopyTmp = document.getElementById('slider_smv_tem_46_52').cloneNode(true);
+
+        var $jssorIntt = function (skipInit) {
+
+            //获取幻灯显示动画类型
+            var $this = $('#slider_smv_tem_46_52');
+            var dh = $(document).height();
+            var wh = $(window).height();
+            var ww = $(window).width();
+            var width = 1000;
+            //区分页头、页尾、内容区宽度
+            if ($this.parents(".header").length > 0 ) {
+                width = $this.parents(".header").width();
+            } else if ($this.parents(".footer").length > 0 ){
+                width = $this.parents(".footer").width();
+            } else {
+                width = $this.parents(".smvContainer").width();
+            }
+
+            if (ww > width) {
+                var left = parseInt((ww - width) * 10 / 2) / 10;
+                $this.css({ 'left': -left, 'width': ww });
+            } else {
+                $this.css({ 'left': 0, 'width': ww });
+            }
+
+            //解决手机端预览PC端幻灯秀时不通栏问题
+            if (VisitFromMobile() && typeof (LayoutConverter) === "undefined") {
+                $this.css("min-width", width);
+                setTimeout(function () {
+                    var boxleft = (width - 330) / 2;
+                    $this.find(".w-slide-btn-box").css("left", boxleft + "px");
+                }, 300);
+            }
+            $this.children().not(".slideArrow").css({ "width": $this.width() });
+
+            if (!skipInit) {
+                tem_46_52_sliderset3_init();
+            }
+
+
+            var areaId = $("#smv_tem_46_52").attr("tareaid");
+            if(areaId==""){
+                var mainWidth = $("#smv_Main").width();
+                $("#smv_tem_46_52 .slideset_AreaC").css({"width":mainWidth+"px","position":"relative","margin":"0 auto"});
+            }else{
+                var controlWidth = $("#smv_tem_46_52").width();
+                $("#smv_tem_46_52 .slideset_AreaC").css({"width":controlWidth+"px","position":"relative","margin":"0 auto"});
+            }
+            $("#smv_tem_46_52").attr("selectArea", "Area0");
+
+            var arrowHeight = $('#slider_smv_tem_46_52 .w-slide-arrowl').eq(-1).outerHeight();
+            var arrowTop = (18 - arrowHeight) / 2;
+            $('#slider_smv_tem_46_52 .w-slide-arrowl').eq(-1).css('top', arrowTop);
+            $('#slider_smv_tem_46_52 .w-slide-arrowr').eq(-1).css('top', arrowTop);
+        }
+        $jssorIntt();
+
+
+        var ctime = null;
+
+        function ScaleSlider() {
+            slide_tem_46_52.$Off($JssorSlider$.$EVT_PARK,slideAnimation_tem_46_52);
+            if (ctime) {
+                clearTimeout(ctime);
+                ctime = null;
+            }
+            ctime = setTimeout(function () {
+                var inst = $('#slider_smv_tem_46_52');
+                     var orginWidth = inst.width();
+                     if (orginWidth == $(window).width()) return;
+                    var inst_parent = inst.parent();
+                    inst.remove()
+                     inst_parent.append(jssorCopyTmp.cloneNode(true));
+
+                inst_parent.find('.animated').smanimate().stop();
+                     //$('.smartRecpt').smrecompute()
+
+                $jssorIntt();
+                ctime = null;
+            }, 200);
+
+        }
+        if (typeof (LayoutConverter) === "undefined") {
+            $Jssor$.$CancelEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        }
+
+          if (typeof (LayoutConverter) !== "undefined") {
+            jssorCache_tem_46_52 .ResizeFunc = $jssorIntt;
+            LayoutConverter.CtrlJsVariableList.push(jssorCache_tem_46_52 );
+        }
+
+    });
+</script>
+</div></div><div id="smv_tem_30_57" ctype="search" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style2" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 32px; width: 207px; left: 728px; top: 44px;z-index:8;" tm="165" ctrl-location="header"><div class="yibuFrameContent tem_30_57  search_Style2  " style="overflow:visible;;" tm="166">
+<!-- w-search -->
+<div class="w-search" id="search_tem_30_57" style="width: 207px; height: 30px;" tm="167">
+    <div class="w-search-main" style="height: 30px; line-height: 30px;" tm="168">
+        <a href="javascript:void(0);" class="w-search-btn" style="height: 30px; line-height: 30px;" tm="169">
+            <i class="w-search-btn-icon mw-iconfont " tm="170">끠</i>
+            <span class="w-search-btn-txt  " tm="171"></span>
+        </a>
+
+        <div class="w-search-inner w-placeholder " style="height: 30px; line-height: 30px;" tm="172">
+            <input type="text" placeholder="请输入关键词" class="w-search-input" style="height: 18px; line-height: 18px; margin-top: 6px;" tm="173">
+        </div>
+    </div>
+    <ul class="w-searchkey" tm="174">
+            <li class="w-searchkey-item" tm="175" style="height: 30px; line-height: 30px;"><a href="javascript:void(0);" displayorder="0" data-type="news" name="文章" tm="176"></a></li>
+            <li class="w-searchkey-item" tm="177" style="height: 30px; line-height: 30px;"><a href="javascript:void(0);" displayorder="1" data-type="product" name="产品" tm="178"></a></li>
+    </ul>
+    <input type="hidden" id="hid_tem_30_57" value="news" tm="179">
+</div>
+
+<script type="text/javascript" tm="180">
+    (function () {
+        var width = 207;
+        var height = 32;
+        var topborder = parseInt($("#search_tem_30_57 .w-search-main").css("border-top-width"));
+        var bottomborder = parseInt($("#search_tem_30_57 .w-search-main").css("border-bottom-width"));
+        var realHeight = parseInt(height) - topborder - bottomborder;
+        $('#search_tem_30_57').css({
+            width:  width,
+            height: realHeight
+        });
+        $('#search_tem_30_57 .w-search-main').css({
+            height: realHeight,
+            lineHeight: realHeight + 'px',
+        });
+        $('#search_tem_30_57 .w-search-btn').css({
+            height: realHeight,
+            lineHeight: realHeight + 'px',
+        });
+        $('#search_tem_30_57 .w-search-inner').css({
+            height: realHeight,
+            lineHeight: realHeight + 'px',
+        });
+        $('#search_tem_30_57 .w-searchkey .w-searchkey-item').css({
+            height: realHeight,
+            lineHeight: realHeight + 'px',
+        });
+
+        var $inputBox = $('#search_tem_30_57 .w-search-inner');
+        var $input = $inputBox.find('input');
+        var inputHeight = $inputBox.height();
+        var fontHeight = +$input.css('fontSize').replace('px', '') + 6;
+
+        $input.css({
+            height: fontHeight,
+            lineHeight: fontHeight + 'px',
+            marginTop: (inputHeight - fontHeight) / 2
+        });
+
+        JPlaceHolder(searchPlaceHolder_tem_30_57);
+        function searchPlaceHolder_tem_30_57() {
+            var placeHeight_tem_30_57 = $("#smv_tem_30_57 .w-search-inner.w-placeholder .w-search-input").height();
+             $("#smv_tem_30_57 .w-search-inner.w-placeholder .placeholder-text .placeholder-text-in").css("lineHeight", placeHeight_tem_30_57 + "px");
+        }
+        var index = $("#smv_tem_30_57").css("z-index");
+        $('#search_tem_30_57').find('.w-search-input').off('input').on('input', function () {
+            var val = $(this).val();
+            val = val.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                $('#search_tem_30_57').find('.w-searchkey-item a').each(function (index) {
+                    var name = $(this).attr("name");
+                    var text = '在' + name + '中搜索"' + val + '"';
+                    $(this).html(text);
+                });
+                $('#search_tem_30_57').find('.w-searchkey').slideDown(100);
+                 $("#smv_tem_30_57").css("z-index", 10001);
+
+        });
+        if ("Prev" != "Design") {
+            $('#search_tem_30_57 .w-searchkey-item a').off('click').on('click', function () {
+                var type = $(this).attr('data-type');
+                $('#hid_tem_30_57').val(type);
+                var keyword = $("#search_tem_30_57 .w-search-input").val();
+                if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
+                    alert("搜索关键词不能为空")
+                    return;
+                }
+                if (type == "news") {
+                    window.location.href = "/NewsInfoSearch?searchKey=" + encodeURIComponent(keyword);
+                }
+                else {
+                    window.location.href = "/ProductInfoSearch?searchKey=" + encodeURIComponent(keyword);
+                }
+            });
+            $('#search_tem_30_57 .w-search-btn').off('click').on('click', function () {
+                var type = $('#hid_tem_30_57').val();
+                var keyword = $("#search_tem_30_57 .w-search-input").val();
+                if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
+                    alert("搜索关键词不能为空")
+                    return;
+                }
+                if (type == "news") {
+                    window.location.href = "/NewsInfoSearch?searchKey=" + encodeURIComponent(keyword);
+                }
+                else {
+                    window.location.href = "/ProductInfoSearch?searchKey=" + encodeURIComponent(keyword);
+                }
+            });
+            $("#search_tem_30_57 .w-search-input").keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $('#search_tem_30_57 .w-search-btn').click();
+                }
+            })
+        }
+    })(jQuery);
+</script></div></div><div id="smv_tem_31_18" ctype="cart" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style2" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 45px; width: 64px; left: 936px; top: 34px;z-index:9;" tm="181" ctrl-location="header"><div class="yibuFrameContent tem_31_18  cart_Style2  " style="overflow:visible;;" tm="182"><div class="w-shoppingcart-inner" style="margin: 20px;" tm="183">
+    <a name="cartControl_GoToCheckOut" href="#" target="_blank" class="w-shoppingcart-text" tm="184">
+        <i class="mw-iconfont icon-car" tm="185">
+
+            낙
+
+        </i>
+    </a>
+
+            <a name="cartControl_GoToCheckOut" href="#" target="_blank" class="w-shoppingcart-text" tm="186"></a>
+
+
+
+         <span name="smartcontrol" class="w-shoppingcart-amount" style="visibility:visible" tm="187">0</span>
+
+</div>
+
+<script type="text/javascript" tm="188">
+    $(function () {
+        cartControlGetProductCount();
+
+        $.post("/customer/GetCurrentUser", {}, function (data) {
+            if (!data.status) {
+                $('a[name=cartControl_GoToCheckOut]').attr("href", "/customer/login?ReturnUrl=/ebusiness/cart");
+            }
+        }, "json")
+    })
+    function cartControlGetProductCount() {
+        $.get('/ebusiness/GetCartItemCount', {}, function (data) {
+            $('span.w-shoppingcart-amount').text(data.count);
+        }, "json")
+    }
+</script></div></div><div id="smv_tem_69_59" ctype="logoimage" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="" tareaid="Area0" re-direction="all" daxis="All" isdeletable="True" style="height: 43px; width: 106px; left: 1px; top: 34px;z-index:28;" tm="189" ctrl-location="header"><div class="yibuFrameContent tem_69_59  logoimage_Style1  " style="overflow:visible;;" tm="190">
+<div class="w-image-box" data-filltype="0" id="div_tem_69_59" tm="191" style="height: 43px; width: 106px;">
+    <a target="_self" href="#" tm="192">
+        <img src="./index_files/-54124.png" alt="" title="" id="img_smv_tem_69_59" style="width: 106px; height:43px;" tm="193">
+    </a>
+</div>
+
+<script type="text/javascript" tm="194">
+    $(function () {
+        InitImageSmv("tem_69_59", "106", "43", "0");
+    });
+</script>
+
+</div></div>
+        </div>
+    </div>
+    <div class="main-layout-wrapper" id="smv_AreaMainWrapper" style="background-color: rgb(208, 224, 227); background-image: none;
+         background-repeat: no-repeat;background-position:0 0; background:-moz-linear-gradient(top, none, none);background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));background:-o-linear-gradient(top, none, none);background:-ms-linear-gradient(top, none, none);background:linear-gradient(top, none, none);;background-size: auto;" bgscroll="none" tm="195">
+        <div class="main-layout" id="tem-main-layout11" style="width: 100%;" tm="196">
+            <div style="display: none" tm="197">
+
+            </div>
+            <div class="" id="smv_MainContent" rel="mainContentWrapper" style="width: 100%; min-height: 300px; position: relative; " tm="198">
+
+                <div class="smvWrapper" style="min-width:1000px;  position: relative; background-color: transparent; background-image: none; background-repeat: no-repeat; background:-moz-linear-gradient(top, none, none);background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));background:-o-linear-gradient(top, none, none);background:-ms-linear-gradient(top, none, none);background:linear-gradient(top, none, none);;background-position:0 0;background-size:auto;" bgscroll="none" tm="199" oriwidth="1432px" oriminwidth="1000px"><div class="smvContainer" id="smv_Main" cpid="32" style="min-height:400px;width:1000px;height:3647px;  position: relative; " tm="200" oriwidth="1000px" oriminwidth="0px"><div id="smv_con_11_36" ctype="banner" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="" iscontainer="True" pvid="" tareaid="" re-direction="y" daxis="Y" isdeletable="True" style="height: 1533px; width: 100%; left: 0px; top: 4px;z-index:1;" tm="201" ctrl-location="main"><div class="yibuFrameContent con_11_36  banner_Style1  " style="overflow:visible;;" tm="202"><div class="fullcolumn-inner smAreaC" id="smc_Area0" cid="con_11_36" style="width:1000px" tm="203" oriwidth="1000px" oriminwidth="0px">
+    <div id="smv_con_92_10" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_11_36" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 498px; width: 446px; left: 546px; top: 91px;z-index:24;" tm="204" ctrl-location="main"><div class="yibuFrameContent con_92_10  area_Style1  " style="overflow:visible;;" tm="205"><div class="w-container" data-effect-name="enterTop" tm="206">
+    <div class="smAreaC" id="smc_Area0" cid="con_92_10" tm="207">
+        <div id="smv_con_15_19" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item1" areaid="Area0" iscontainer="False" pvid="con_92_10" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 29px; width: 366px; left: 40px; top: 87px;z-index:5;" tm="208" ctrl-location="main"><div class="yibuFrameContent con_15_19  text_Style1  " style="overflow:hidden;;" tm="209"><div id="txt_con_15_19" style="height: 100%;" tm="210">
+    <div class="editableContent" id="txtc_con_15_19" style="height: 100%; word-wrap:break-word;" tm="211">
+        <p tm="212"><span style="color:#f1c40f" tm="213"><span style="font-family:FangSong_GB2312" tm="214"><span style="font-size:26px" tm="215"><strong tm="216">Nutitious lunch collecation</strong></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="217">
+    var tables = $(' #smv_con_15_19').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_14_55" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_92_10" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 17px; width: 364px; left: 41px; top: 44px; z-index: 4;" tm="218" ctrl-location="main"><div class="yibuFrameContent con_14_55  image_Style1  " style="overflow:visible;;" tm="219">
+    <div class="w-image-box image-clip-wrap" data-filltype="0" id="div_con_14_55" tm="220" style="height: 17px; width: 364px;">
+        <a target="_self" tm="221">
+            <img src="./index_files/-1209.png" alt="the--art--of--chinese--food" title="the--art--of--chinese--food" id="img_smv_con_14_55" style="width: 364px; height: 17px;" class="" tm="222">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="223">
+        $(function () {
+
+                InitImageSmv("con_14_55", "364", "19", "0");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_13_4" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item1" areaid="Area0" iscontainer="False" pvid="con_92_10" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 33px; width: 106px; left: 170px; top: 0px;z-index:3;" tm="224" ctrl-location="main"><div class="yibuFrameContent con_13_4  text_Style1  " style="overflow:hidden;;" tm="225"><div id="txt_con_13_4" style="height: 100%;" tm="226">
+    <div class="editableContent" id="txtc_con_13_4" style="height: 100%; word-wrap:break-word;" tm="227">
+        <p tm="228"><span style="font-family:Microsoft YaHei" tm="229"><span style="color:#999999" tm="230"><span style="font-size:24px" tm="231">中餐艺术</span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="232">
+    var tables = $(' #smv_con_13_4').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_16_25" ctype="text" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;zoomIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="con_92_10" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 112px; width: 408px; left: 19px; top: 179px;z-index:6;" tm="233" ctrl-location="main"><div class="yibuFrameContent con_16_25  text_Style1  " style="overflow:hidden;;" tm="234"><div id="txt_con_16_25" style="height: 100%;" tm="235">
+    <div class="editableContent" id="txtc_con_16_25" style="height: 100%; word-wrap:break-word;" tm="236">
+        <p style="text-align:center" tm="237"><span style="font-size:14px" tm="238"><span style="color:#999999" tm="239"><span style="line-height:1.5" tm="240">孔子说过：“食不厌精，脍不厌细”</span></span></span></p>
+
+<p style="text-align:center" tm="241"><span style="font-size:14px" tm="242"><span style="color:#999999" tm="243"><span style="line-height:1.5" tm="244">这反映了先民对于饮食的精品意识。当然，这可能仅仅</span></span></span></p>
+
+<p style="text-align:center" tm="245"><span style="font-size:14px" tm="246"><span style="color:#999999" tm="247"><span style="line-height:1.5" tm="248">局限于某些贵族阶层。但是，这种精品</span></span></span></p>
+
+<p style="text-align:center" tm="249"><span style="font-size:14px" tm="250"><span style="color:#999999" tm="251"><span style="line-height:1.5" tm="252">意识作为一种文化精神</span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="253">
+    var tables = $(' #smv_con_16_25').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_17_33" ctype="text" smanim="{&quot;delay&quot;:0.7,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;flip&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item2" areaid="Area0" iscontainer="False" pvid="con_92_10" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 25px; width: 83px; left: 181px; top: 357px;z-index:14;" tm="254" ctrl-location="main"><div class="yibuFrameContent con_17_33  text_Style1  " style="overflow:hidden;;" tm="255"><div id="txt_con_17_33" style="height: 100%;" tm="256">
+    <div class="editableContent" id="txtc_con_17_33" style="height: 100%; word-wrap:break-word;" tm="257">
+        <p tm="258"><span style="color:#2c3e50" tm="259"><span style="letter-spacing:1.5px" tm="260"><span style="font-size:22px" tm="261"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="262">烹调师</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="263">
+    var tables = $(' #smv_con_17_33').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_93_35" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_92_10" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 106px; width: 423px; left: 12px; top: 392px;z-index:19;" tm="264" ctrl-location="main"><div class="yibuFrameContent con_93_35  area_Style1  " style="overflow:visible;;" tm="265"><div class="w-container" data-effect-name="enterTop" tm="266">
+    <div class="smAreaC" id="smc_Area0" cid="con_93_35" tm="267">
+        <div id="smv_con_18_35" ctype="image" smanim="{&quot;delay&quot;:0.7,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;bounceIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_93_35" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 106px; width: 111px; left: 156px; top: 0px;z-index:15;" tm="268" ctrl-location="main"><div class="yibuFrameContent con_18_35  image_Style1  " style="overflow:visible;;" tm="269">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_18_35" tm="270" style="width: 111px; height: 106px;">
+        <a target="_self" tm="271" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1211.png" alt="ren" title="ren" id="img_smv_con_18_35" style="width: 111px; height:106px;" class="" tm="272">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="273">
+        $(function () {
+
+                InitImageSmv("con_18_35", "111", "106", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_22_38" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item2" areaid="Area0" iscontainer="False" pvid="con_93_35" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 54px; width: 132px; left: 290px; top: 45px;z-index:18;" tm="274" ctrl-location="main"><div class="yibuFrameContent con_22_38  text_Style1  " style="overflow:hidden;;" tm="275"><div id="txt_con_22_38" style="height: 100%;" tm="276">
+    <div class="editableContent" id="txtc_con_22_38" style="height: 100%; word-wrap:break-word;" tm="277">
+        <p style="text-align:right" tm="278"><span style="color:#ffcc00" tm="279"><span style="font-size:16px" tm="280"><strong tm="281">———————</strong></span></span></p>
+
+<p style="text-align:right" tm="282"><span style="font-size:22px" tm="283"><strong tm="284"><span style="color:#999999" tm="285"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="286">Caesar</span></span></strong></span></p>
+
+<p style="text-align:right" tm="287"><span style="color:#ffcc00" tm="288"><span style="font-size:16px" tm="289"><strong tm="290">———————</strong></span></span></p>
+
+    </div>
+</div>
+
+<script tm="291">
+    var tables = $(' #smv_con_22_38').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_23_48" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item2" areaid="Area0" iscontainer="False" pvid="con_93_35" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 62px; width: 136px; left: 1px; top: 44px;z-index:18;" tm="292" ctrl-location="main"><div class="yibuFrameContent con_23_48  text_Style1  " style="overflow:hidden;;" tm="293"><div id="txt_con_23_48" style="height: 100%;" tm="294">
+    <div class="editableContent" id="txtc_con_23_48" style="height: 100%; word-wrap:break-word;" tm="295">
+        <p tm="296"><span style="color:#ffcc00" tm="297"><span style="font-size:16px" tm="298"><strong tm="299">———————</strong></span></span></p>
+
+<p tm="300"><span style="font-size:22px" tm="301"><strong tm="302"><span style="color:#999999" tm="303"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="304">Senior chef</span></span></strong></span></p>
+
+<p tm="305"><span style="color:#ffcc00" tm="306"><span style="font-size:16px" tm="307"><strong tm="308">———————</strong></span></span></p>
+
+    </div>
+</div>
+
+<script tm="309">
+    var tables = $(' #smv_con_23_48').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div>    </div>
+</div></div></div>    </div>
+</div></div></div><div id="smv_con_12_1" ctype="image" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;pulse&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_11_36" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 532px; width: 521px; left: 20px; top: 38px; z-index: 3; opacity: 1;" tm="310" ctrl-location="main" sm-finished="true" smexecuted="1"><div class="yibuFrameContent con_12_1  image_Style1  " style="overflow:visible;;" tm="311">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_12_1" tm="312" style="width: 521px; height: 532px;">
+        <a target="_self" href="#" tm="313" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1204.png" alt="food1" title="food1" id="img_smv_con_12_1" style="width: 521px; height:532px;" class="" tm="314">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="315">
+        $(function () {
+
+                InitImageSmv("con_12_1", "521", "532", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_24_26" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_11_36" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 20px; width: 873px; left: 63px; top: 662px;z-index:19;" tm="316" ctrl-location="main"><div class="yibuFrameContent con_24_26  image_Style1  " style="overflow:visible;;" tm="317">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_24_26" tm="318" style="width: 873px; height: 20px;">
+        <a target="_self" tm="319" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1213.png" alt="menu" title="menu" id="img_smv_con_24_26" style="width: 873px; height:20px;" class="" tm="320">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="321">
+        $(function () {
+
+                InitImageSmv("con_24_26", "873", "20", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_94_31" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_11_36" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 499px; width: 433px; left: 67px; top: 775px;z-index:25;" tm="322" ctrl-location="main"><div class="yibuFrameContent con_94_31  area_Style1  " style="overflow:visible;;" tm="323"><div class="w-container" data-effect-name="enterTop" tm="324">
+    <div class="smAreaC" id="smc_Area0" cid="con_94_31" tm="325">
+        <div id="smv_con_25_22" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item1" areaid="Area0" iscontainer="False" pvid="con_94_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 33px; width: 106px; left: 0px; top: 0px;z-index:3;" tm="326" ctrl-location="main"><div class="yibuFrameContent con_25_22  text_Style1  " style="overflow:hidden;;" tm="327"><div id="txt_con_25_22" style="height: 100%;" tm="328">
+    <div class="editableContent" id="txtc_con_25_22" style="height: 100%; word-wrap:break-word;" tm="329">
+        <p tm="330"><span style="font-family:Microsoft YaHei" tm="331"><span style="color:#999999" tm="332"><span style="font-size:24px" tm="333">中餐艺术</span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="334">
+    var tables = $(' #smv_con_25_22').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_28_44" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_94_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 25px; width: 353px; left: 3px; top: 52px;z-index:20;" tm="335" ctrl-location="main"><div class="yibuFrameContent con_28_44  image_Style1  " style="overflow:visible;;" tm="336">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_28_44" tm="337" style="width: 353px; height: 25px;">
+        <a target="_self" tm="338" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1208.png" alt="mushrooms--and---broccoli" title="mushrooms--and---broccoli" id="img_smv_con_28_44" style="width: 353px; height:25px;" class="" tm="339">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="340">
+        $(function () {
+
+                InitImageSmv("con_28_44", "353", "25", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_29_45" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item1" areaid="Area0" iscontainer="False" pvid="con_94_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 29px; width: 339px; left: 2px; top: 95px;z-index:5;" tm="341" ctrl-location="main"><div class="yibuFrameContent con_29_45  text_Style1  " style="overflow:hidden;;" tm="342"><div id="txt_con_29_45" style="height: 100%;" tm="343">
+    <div class="editableContent" id="txtc_con_29_45" style="height: 100%; word-wrap:break-word;" tm="344">
+        <p tm="345"><span style="color:#f1c40f" tm="346"><span style="font-family:FangSong_GB2312" tm="347"><span style="font-size:26px" tm="348"><strong tm="349">Zhejiang cuisine</strong></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="350">
+    var tables = $(' #smv_con_29_45').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_30_31" ctype="text" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;zoomIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="con_94_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 123px; width: 380px; left: 26px; top: 149px;z-index:6;" tm="351" ctrl-location="main"><div class="yibuFrameContent con_30_31  text_Style1  " style="overflow:hidden;;" tm="352"><div id="txt_con_30_31" style="height: 100%;" tm="353">
+    <div class="editableContent" id="txtc_con_30_31" style="height: 100%; word-wrap:break-word;" tm="354">
+        <p tm="355"><span style="font-size:14px" tm="356"><span style="line-height:1.5" tm="357"><span style="font-family:Microsoft YaHei" tm="358"><span style="color:#999999" tm="359">中国菜，属于浙江菜</span></span></span></span></p>
+
+<p tm="360"><span style="font-size:14px" tm="361"><span style="line-height:1.5" tm="362"><span style="font-family:Microsoft YaHei" tm="363"><span style="color:#999999" tm="364">西兰花有明显的防癌抗癌的效果，西兰花和提高身体</span></span></span></span></p>
+
+<p tm="365"><span style="font-size:14px" tm="366"><span style="line-height:1.5" tm="367"><span style="font-family:Microsoft YaHei" tm="368"><span style="color:#999999" tm="369">的免疫功能。西兰花中的营养成分，不仅含量</span></span></span></span></p>
+
+<p tm="370"><span style="font-size:14px" tm="371"><span style="line-height:1.5" tm="372"><span style="font-family:Microsoft YaHei" tm="373"><span style="color:#999999" tm="374">而且十分，主要包括蛋白质、碳水化合物。脂肪、矿物质、</span></span></span></span></p>
+
+<p tm="375"><span style="font-size:14px" tm="376"><span style="line-height:1.5" tm="377"><span style="font-family:Microsoft YaHei" tm="378"><span style="color:#999999" tm="379">维生素C和胡萝卜素等</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="380">
+    var tables = $(' #smv_con_30_31').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_134_37" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_94_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 208px; width: 341px; left: 4px; top: 280px;z-index:24;" tm="381" ctrl-location="main"><div class="yibuFrameContent con_134_37  area_Style1  " style="overflow:visible;;" tm="382"><div class="w-container" data-effect-name="enterTop" tm="383">
+    <div class="smAreaC" id="smc_Area0" cid="con_134_37" tm="384">
+        <div id="smv_con_135_47" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_134_37" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 203px; width: 150px; left: 0px; top: 5px;z-index:24;" tm="385" ctrl-location="main"><div class="yibuFrameContent con_135_47  area_Style1  " style="overflow:visible;;" tm="386"><div class="w-container" data-effect-name="enterTop" tm="387">
+    <div class="smAreaC" id="smc_Area0" cid="con_135_47" tm="388">
+        <div id="smv_con_31_46" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_135_47" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 129px; width: 150px; left: 0px; top: 0px;z-index:21;" tm="389" ctrl-location="main"><div class="yibuFrameContent con_31_46  image_Style1  " style="overflow:visible;;" tm="390">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_31_46" tm="391" style="width: 150px; height: 129px;">
+        <a target="_self" tm="392" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1207.png" alt="Product_xg" title="Product_xg" id="img_smv_con_31_46" style="width: 150px; height:129px;" class="" tm="393">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="394">
+        $(function () {
+
+                InitImageSmv("con_31_46", "150", "129", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_34_13" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_135_47" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 27px; width: 30px; left: 1px; top: 175px;z-index:23;" tm="395" ctrl-location="main"><div class="yibuFrameContent con_34_13  image_Style1  " style="overflow:visible;;" tm="396">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_34_13" tm="397" style="width: 30px; height: 27px;">
+        <a target="_self" tm="398" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1222.png" alt="star_UP" title="star_UP" id="img_smv_con_34_13" style="width: 30px; height:27px;" class="" tm="399">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="400">
+        $(function () {
+
+                InitImageSmv("con_34_13", "30", "27", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_35_7" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_135_47" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 27px; width: 30px; left: 35px; top: 176px;z-index:23;" tm="401" ctrl-location="main"><div class="yibuFrameContent con_35_7  image_Style1  " style="overflow:visible;;" tm="402">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_35_7" tm="403" style="width: 30px; height: 27px;">
+        <a target="_self" tm="404" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1222.png" alt="star_UP" title="star_UP" id="img_smv_con_35_7" style="width: 30px; height:27px;" class="" tm="405">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="406">
+        $(function () {
+
+                InitImageSmv("con_35_7", "30", "27", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_37_9" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_135_47" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 27px; width: 30px; left: 69px; top: 176px;z-index:23;" tm="407" ctrl-location="main"><div class="yibuFrameContent con_37_9  image_Style1  " style="overflow:visible;;" tm="408">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_37_9" tm="409" style="width: 30px; height: 27px;">
+        <a target="_self" tm="410" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1222.png" alt="star_UP" title="star_UP" id="img_smv_con_37_9" style="width: 30px; height:27px;" class="" tm="411">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="412">
+        $(function () {
+
+                InitImageSmv("con_37_9", "30", "27", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_38_12" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_135_47" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 27px; width: 30px; left: 106px; top: 176px;z-index:23;" tm="413" ctrl-location="main"><div class="yibuFrameContent con_38_12  image_Style1  " style="overflow:visible;;" tm="414">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_38_12" tm="415" style="width: 30px; height: 27px;">
+        <a target="_self" tm="416" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1222.png" alt="star_UP" title="star_UP" id="img_smv_con_38_12" style="width: 30px; height:27px;" class="" tm="417">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="418">
+        $(function () {
+
+                InitImageSmv("con_38_12", "30", "27", "2");
+
+                 });
+    </script>
+
+</div></div>    </div>
+</div></div></div><div id="smv_con_32_5" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_134_37" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 208px; width: 143px; left: 197px; top: 0px; z-index: 22;" tm="419" ctrl-location="main"><div class="yibuFrameContent con_32_5  image_Style1  " style="overflow:visible;;" tm="420">
+    <div class="w-image-box image-clip-wrap" data-filltype="0" id="div_con_32_5" tm="421" style="height: 208px; width: 143px;">
+        <a target="_self" tm="422">
+            <img src="./index_files/-1220.png" alt="Product_dao" title="Product_dao" id="img_smv_con_32_5" style="width: 143px; height: 208px;" class="" tm="423">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="424">
+        $(function () {
+
+                InitImageSmv("con_32_5", "144", "208", "0");
+
+                 });
+    </script>
+
+</div></div>    </div>
+</div></div></div>    </div>
+</div></div></div><div id="smv_con_33_50" ctype="image" smanim="{&quot;delay&quot;:0.5,&quot;duration&quot;:0.5,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;pulse&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_11_36" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 486px; width: 465px; left: 518px; top: 817px;z-index:23;" tm="425" ctrl-location="main"><div class="yibuFrameContent con_33_50  image_Style1  " style="overflow:visible;;" tm="426">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_33_50" tm="427" style="width: 465px; height: 486px;">
+        <a target="_self" href="#" tm="428" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1205.png" alt="food2" title="food2" id="img_smv_con_33_50" style="width: 465px; height:486px;" class="" tm="429">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="430">
+        $(function () {
+
+                InitImageSmv("con_33_50", "465", "486", "2");
+
+                 });
+    </script>
+
+</div></div></div>
+<div id="bannerWrap_con_11_36" class="fullcolumn-outer" style="position: absolute; top: 0px; bottom: 0px; left: -216px; width: 1432px;" tm="431">
+</div>
+
+<script type="text/javascript" tm="432">
+
+    $(function () {
+        var resize = function () {
+            $("#smv_con_11_36 >.yibuFrameContent>.fullcolumn-inner").width($("#smv_con_11_36").parent().width());
+            $('#bannerWrap_con_11_36').fullScreen(function (t) {
+                if (VisitFromMobile()) {
+                    t.css("min-width", t.parent().width())
+                }
+            });
+        }
+        if (typeof (LayoutConverter) !== "undefined") {
+            LayoutConverter.CtrlJsVariableList.push({
+                CtrlId: "con_11_36",
+                ResizeFunc: resize,
+            });
+        } else {
+            $(window).resize(function (e) {
+                if (e.target == this) {
+                    resize();
+                }
+            });
+        }
+
+        resize();
+    });
+</script>
+</div></div><div id="smv_con_39_22" ctype="banner" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="" iscontainer="True" pvid="" tareaid="" re-direction="y" daxis="Y" isdeletable="True" style="height: 508px; width: 100%; left: 0px; top: 1383px;z-index:24;" tm="433" ctrl-location="main"><div class="yibuFrameContent con_39_22  banner_Style1  " style="overflow:visible;;" tm="434"><div class="fullcolumn-inner smAreaC" id="smc_Area0" cid="con_39_22" style="width:1000px" tm="435" oriwidth="1000px" oriminwidth="0px">
+    <div id="smv_con_41_20" ctype="image" smanim="{&quot;delay&quot;:0.5,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;Left&quot;,&quot;animationName&quot;:&quot;slideIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_39_22" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 483px; width: 600px; left: 1px; top: 46px;z-index:3;" tm="436" ctrl-location="main"><div class="yibuFrameContent con_41_20  image_Style1  " style="overflow:visible;;" tm="437">
+    <div class="w-image-box image-clip-wrap" data-filltype="0" id="div_con_41_20" tm="438" style="height: 483px; width: 600px;">
+        <a target="_self" tm="439">
+            <img src="./index_files/-1401.png" alt="Seasoning-pt" title="Seasoning-pt" id="img_smv_con_41_20" style="width: 600px; height:483px;" class="" tm="440">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="441">
+        $(function () {
+
+                InitImageSmv("con_41_20", "600", "483", "0");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_136_58" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_39_22" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 380px; width: 384px; left: 610px; top: 1px;z-index:10;" tm="442" ctrl-location="main"><div class="yibuFrameContent con_136_58  area_Style1  " style="overflow:visible;;" tm="443"><div class="w-container" data-effect-name="enterTop" tm="444">
+    <div class="smAreaC" id="smc_Area0" cid="con_136_58" tm="445">
+        <div id="smv_con_95_17" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_136_58" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 220px; width: 378px; left: 3px; top: 160px;z-index:8;" tm="446" ctrl-location="main"><div class="yibuFrameContent con_95_17  area_Style1  " style="overflow:visible;;" tm="447"><div class="w-container" data-effect-name="enterTop" tm="448">
+    <div class="smAreaC" id="smc_Area0" cid="con_95_17" tm="449">
+        <div id="smv_con_43_9" ctype="text" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;Right&quot;,&quot;animationName&quot;:&quot;slideIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_95_17" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 32px; width: 148px; left: 229px; top: 0px;z-index:5;" tm="450" ctrl-location="main"><div class="yibuFrameContent con_43_9  text_Style1  " style="overflow:hidden;;" tm="451"><div id="txt_con_43_9" style="height: 100%;" tm="452">
+    <div class="editableContent" id="txtc_con_43_9" style="height: 100%; word-wrap:break-word;" tm="453">
+        <p tm="454"><span style="font-family:Microsoft YaHei" tm="455"><span style="color:#d35400" tm="456"><span style="font-size:24px" tm="457">各种菜品配料</span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="458">
+    var tables = $(' #smv_con_43_9').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_44_48" ctype="image" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;Right&quot;,&quot;animationName&quot;:&quot;slideIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_95_17" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 42px; width: 368px; left: 5px; top: 43px;z-index:6;" tm="459" ctrl-location="main"><div class="yibuFrameContent con_44_48  image_Style1  " style="overflow:visible;;" tm="460">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_44_48" tm="461" style="width: 368px; height: 42px;">
+        <a target="_self" tm="462" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1210.png" alt="Various--ingredients" title="Various--ingredients" id="img_smv_con_44_48" style="width: 368px; height:42px;" class="" tm="463">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="464">
+        $(function () {
+
+                InitImageSmv("con_44_48", "368", "42", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_45_42" ctype="text" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;Right&quot;,&quot;animationName&quot;:&quot;slideIn&quot;,&quot;infinite&quot;:&quot;1&quot;}" class="esmartMargin smartAbs animated" cpid="32" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="con_95_17" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 112px; width: 373px; left: 2px; top: 108px;z-index:7;" tm="465" ctrl-location="main"><div class="yibuFrameContent con_45_42  text_Style1  " style="overflow:hidden;;" tm="466"><div id="txt_con_45_42" style="height: 100%;" tm="467">
+    <div class="editableContent" id="txtc_con_45_42" style="height: 100%; word-wrap:break-word;" tm="468">
+        <p style="text-align:right" tm="469"><span style="font-size:16px" tm="470"><span style="line-height:1.5" tm="471"><span style="color:#946552" tm="472"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="473">材料产品，可以使菜肴增加</span></span></span></span></p>
+
+<p style="text-align:right" tm="474"><span style="font-size:16px" tm="475"><span style="line-height:1.5" tm="476"><span style="color:#946552" tm="477"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="478">更加口味，增加色彩菜肴的色泽。干辣椒品种很多</span></span></span></span></p>
+
+<p style="text-align:right" tm="479"><span style="font-size:16px" tm="480"><span style="line-height:1.5" tm="481"><span style="color:#946552" tm="482"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="483">有大金条，二金条，五叶椒，朝天椒，七重椒</span></span></span></span></p>
+
+<p style="text-align:right" tm="484"><span style="font-size:16px" tm="485"><span style="line-height:1.5" tm="486"><span style="color:#946552" tm="487"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="488">大辣椒和小米椒等</span></span></span></span></p>
+
+<p tm="489">&nbsp;</p>
+
+    </div>
+</div>
+
+<script tm="490">
+    var tables = $(' #smv_con_45_42').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div>    </div>
+</div></div></div><div id="smv_con_96_10" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_136_58" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 106px; width: 343px; left: 20px; top: 0px;z-index:9;" tm="491" ctrl-location="main"><div class="yibuFrameContent con_96_10  area_Style1  " style="overflow:visible;;" tm="492"><div class="w-container" data-effect-name="enterTop" tm="493">
+    <div class="smAreaC" id="smc_Area0" cid="con_96_10" tm="494">
+            </div>
+</div></div></div>    </div>
+</div></div></div></div>
+<div id="bannerWrap_con_39_22" class="fullcolumn-outer" style="position: absolute; top: 0px; bottom: 0px; left: -216px; width: 1432px;" tm="495">
+</div>
+
+<script type="text/javascript" tm="496">
+
+    $(function () {
+        var resize = function () {
+            $("#smv_con_39_22 >.yibuFrameContent>.fullcolumn-inner").width($("#smv_con_39_22").parent().width());
+            $('#bannerWrap_con_39_22').fullScreen(function (t) {
+                if (VisitFromMobile()) {
+                    t.css("min-width", t.parent().width())
+                }
+            });
+        }
+        if (typeof (LayoutConverter) !== "undefined") {
+            LayoutConverter.CtrlJsVariableList.push({
+                CtrlId: "con_39_22",
+                ResizeFunc: resize,
+            });
+        } else {
+            $(window).resize(function (e) {
+                if (e.target == this) {
+                    resize();
+                }
+            });
+        }
+
+        resize();
+    });
+</script>
+</div></div><div id="smv_con_46_31" ctype="banner" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="" iscontainer="True" pvid="" tareaid="" re-direction="y" daxis="Y" isdeletable="True" style="height: 1333px; width: 100%; left: 0px; top: 1890px;z-index:25;" tm="497" ctrl-location="main"><div class="yibuFrameContent con_46_31  banner_Style1  " style="overflow:visible;;" tm="498"><div class="fullcolumn-inner smAreaC" id="smc_Area0" cid="con_46_31" style="width:1000px" tm="499" oriwidth="1000px" oriminwidth="0px">
+    <div id="smv_con_115_43" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 400px; left: 100px; top: 1042px;z-index:7;" tm="500" ctrl-location="main"><div class="yibuFrameContent con_115_43  text_Style1  " style="overflow:hidden;;" tm="501"><div id="txt_con_115_43" style="height: 100%;" tm="502">
+    <div class="editableContent" id="txtc_con_115_43" style="height: 100%; word-wrap:break-word;" tm="503">
+        <p tm="504"><span style="color:#f39800" tm="505"><span style="font-size:24px" tm="506"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="507">03.&nbsp;&nbsp;</span></span></span><span style="line-height:1.5" tm="508"><span style="color:#434a54" tm="509"><span style="font-size:20px" tm="510">三明治卷</span></span></span></p>
+
+<p tm="511"><span style="line-height:1.5" tm="512"><span style="font-size:16px" tm="513"><span style="color:#444444" tm="514"><span style="font-family:Verdana,Geneva,sans-serif" tm="515">&nbsp; &nbsp; &nbsp; &nbsp; New England Lobster Roll</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="516">
+    var tables = $(' #smv_con_115_43').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_119_34" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 400px; left: 500px; top: 1137px;z-index:7;" tm="517" ctrl-location="main"><div class="yibuFrameContent con_119_34  text_Style1  " style="overflow:hidden;;" tm="518"><div id="txt_con_119_34" style="height: 100%;" tm="519">
+    <div class="editableContent" id="txtc_con_119_34" style="height: 100%; word-wrap:break-word;" tm="520">
+        <p tm="521"><span style="color:#f39800" tm="522"><span style="font-size:24px" tm="523"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="524">06.&nbsp; </span></span></span><span style="line-height:1.5" tm="525"><span style="color:#434a54" tm="526"><span style="font-size:20px" tm="527">苏香饼</span></span></span></p>
+
+<p tm="528"><span style="line-height:1.5" tm="529"><span style="font-size:16px" tm="530"><span style="color:#444444" tm="531"><span style="font-family:Verdana,Geneva,sans-serif" tm="532">&nbsp; &nbsp; &nbsp; &nbsp; Su Xiang cake</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="533">
+    var tables = $(' #smv_con_119_34').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_125_11" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 400px; left: 100px; top: 948px;z-index:7;" tm="534" ctrl-location="main"><div class="yibuFrameContent con_125_11  text_Style1  " style="overflow:hidden;;" tm="535"><div id="txt_con_125_11" style="height: 100%;" tm="536">
+    <div class="editableContent" id="txtc_con_125_11" style="height: 100%; word-wrap:break-word;" tm="537">
+        <p tm="538"><span style="color:#f39800" tm="539"><span style="font-size:24px" tm="540"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="541">01.&nbsp; </span></span></span><span style="font-size:20px" tm="542"><span style="line-height:1.5" tm="543"><span style="color:#434a54" tm="544">清蒸南瓜</span></span></span></p>
+
+<p tm="545"><span style="font-size:16px" tm="546"><span style="line-height:1.5" tm="547"><span style="color:#444444" tm="548"><span style="font-family:Verdana,Geneva,sans-serif" tm="549">&nbsp; &nbsp; &nbsp; &nbsp; Steamed hairy crab</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="550">
+    var tables = $(' #smv_con_125_11').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_126_11" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 400px; left: 500px; top: 948px;z-index:7;" tm="551" ctrl-location="main"><div class="yibuFrameContent con_126_11  text_Style1  " style="overflow:hidden;;" tm="552"><div id="txt_con_126_11" style="height: 100%;" tm="553">
+    <div class="editableContent" id="txtc_con_126_11" style="height: 100%; word-wrap:break-word;" tm="554">
+        <p tm="555"><span style="color:#f39800" tm="556"><span style="font-size:24px" tm="557"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="558">02.&nbsp;&nbsp;</span></span></span><span style="line-height:1.5" tm="559"><span style="color:#434a54" tm="560"><span style="font-size:20px" tm="561">泼绿沙</span></span></span></p>
+
+<p tm="562"><span style="line-height:1.5" tm="563"><span style="font-size:16px" tm="564"><span style="color:#444444" tm="565"><span style="font-family:Verdana,Geneva,sans-serif" tm="566">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Pour the green sand</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="567">
+    var tables = $(' #smv_con_126_11').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_127_43" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 400px; left: 500px; top: 1042px;z-index:7;" tm="568" ctrl-location="main"><div class="yibuFrameContent con_127_43  text_Style1  " style="overflow:hidden;;" tm="569"><div id="txt_con_127_43" style="height: 100%;" tm="570">
+    <div class="editableContent" id="txtc_con_127_43" style="height: 100%; word-wrap:break-word;" tm="571">
+        <p tm="572"><span style="color:#f39800" tm="573"><span style="font-size:24px" tm="574"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="575">04.&nbsp; </span></span></span><span style="line-height:1.5" tm="576"><span style="color:#434a54" tm="577"><span style="font-size:20px" tm="578">花式甜饼</span></span></span></p>
+
+<p tm="579"><span style="line-height:1.5" tm="580"><span style="font-size:16px" tm="581"><span style="color:#444444" tm="582"><span style="font-family:Verdana,Geneva,sans-serif" tm="583">&nbsp; &nbsp; &nbsp; &nbsp; Petits fours</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="584">
+    var tables = $(' #smv_con_127_43').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_128_43" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 400px; left: 100px; top: 1137px;z-index:7;" tm="585" ctrl-location="main"><div class="yibuFrameContent con_128_43  text_Style1  " style="overflow:hidden;;" tm="586"><div id="txt_con_128_43" style="height: 100%;" tm="587">
+    <div class="editableContent" id="txtc_con_128_43" style="height: 100%; word-wrap:break-word;" tm="588">
+        <p tm="589"><span style="color:#f39800" tm="590"><span style="font-size:24px" tm="591"><span style="font-family:&quot;Microsoft YaHei&quot;" tm="592">05.&nbsp; </span></span></span><span style="line-height:1.5" tm="593"><span style="color:#434a54" tm="594"><span style="font-size:20px" tm="595">拌面</span></span></span></p>
+
+<p tm="596"><span style="line-height:1.5" tm="597"><span style="font-size:16px" tm="598"><span style="color:#444444" tm="599"><span style="font-family:Verdana,Geneva,sans-serif" tm="600">&nbsp; &nbsp; &nbsp; &nbsp; Sesame butter</span></span></span></span></p>
+
+    </div>
+</div>
+
+<script tm="601">
+    var tables = $(' #smv_con_128_43').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_129_32" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 693px; width: 1000px; left: 0px; top: -2px;z-index:0;" tm="602" ctrl-location="main"><div class="yibuFrameContent con_129_32  image_Style1  " style="overflow:visible;;" tm="603">
+    <div class="w-image-box image-clip-wrap" data-filltype="0" id="div_con_129_32" tm="604" oriwidth="1000px" oriminwidth="0px" style="height: 693px; width: 1000px;">
+        <a target="_self" tm="605">
+            <img src="./index_files/-56413.png" alt="" title="" id="img_smv_con_129_32" style="width: 1000px; height: 693px;" class="" tm="606" oriwidth="1000px" oriminwidth="0px">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="607">
+        $(function () {
+
+                InitImageSmv("con_129_32", "998", "693", "0");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_130_19" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_46_31" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 166px; width: 385px; left: 307px; top: 740px;z-index:6;" tm="608" ctrl-location="main"><div class="yibuFrameContent con_130_19  area_Style1  " style="overflow:visible;;" tm="609"><div class="w-container" data-effect-name="enterTop" tm="610">
+    <div class="smAreaC" id="smc_Area0" cid="con_130_19" tm="611">
+        <div id="smv_con_131_19" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item1" areaid="Area0" iscontainer="False" pvid="con_130_19" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 27px; width: 140px; left: 122px; top: 34px;z-index:2;" tm="612" ctrl-location="main"><div class="yibuFrameContent con_131_19  text_Style1  " style="overflow:hidden;;" tm="613"><div id="txt_con_131_19" style="height: 100%;" tm="614">
+    <div class="editableContent" id="txtc_con_131_19" style="height: 100%; word-wrap:break-word;" tm="615">
+        <p tm="616"><span style="font-size:20px" tm="617">Delicious food</span></p>
+
+    </div>
+</div>
+
+<script tm="618">
+    var tables = $(' #smv_con_131_19').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_132_19" ctype="button" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item2" areaid="Area0" iscontainer="False" pvid="con_130_19" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 38px; width: 96px; left: 144px; top: 85px;z-index:4;" tm="619" ctrl-location="main"><div class="yibuFrameContent con_132_19  button_Style1  " style="overflow:visible;;" tm="620"><a target="_self" class="w-button f-ellipsis" style="width: 94px; height: 36px; line-height: 36px;" tm="621">
+    <span class="w-button-position" tm="622">
+        <em class="w-button-text f-ellipsis" tm="623">
+            <i class="mw-iconfont w-button-icon w-icon-hide" tm="624"></i>更多
+        </em>
+    </span>
+</a>
+    <script type="text/javascript" tm="625">
+        $(function () {
+        });
+    </script>
+</div></div>    </div>
+</div></div></div></div>
+<div id="bannerWrap_con_46_31" class="fullcolumn-outer" style="position: absolute; top: 0px; bottom: 0px; left: -216px; width: 1432px;" tm="626">
+</div>
+
+<script type="text/javascript" tm="627">
+
+    $(function () {
+        var resize = function () {
+            $("#smv_con_46_31 >.yibuFrameContent>.fullcolumn-inner").width($("#smv_con_46_31").parent().width());
+            $('#bannerWrap_con_46_31').fullScreen(function (t) {
+                if (VisitFromMobile()) {
+                    t.css("min-width", t.parent().width())
+                }
+            });
+        }
+        if (typeof (LayoutConverter) !== "undefined") {
+            LayoutConverter.CtrlJsVariableList.push({
+                CtrlId: "con_46_31",
+                ResizeFunc: resize,
+            });
+        } else {
+            $(window).resize(function (e) {
+                if (e.target == this) {
+                    resize();
+                }
+            });
+        }
+
+        resize();
+    });
+</script>
+</div></div><div id="smv_con_73_38" ctype="banner" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="" iscontainer="True" pvid="" tareaid="" re-direction="y" daxis="Y" isdeletable="True" style="height: 501px; width: 100%; left: 0px; top: 3139px;z-index:26;" tm="628" ctrl-location="main"><div class="yibuFrameContent con_73_38  banner_Style1  " style="overflow:visible;;" tm="629"><div class="fullcolumn-inner smAreaC" id="smc_Area0" cid="con_73_38" style="width:1000px" tm="630" oriwidth="1000px" oriminwidth="0px">
+    <div id="smv_con_74_18" ctype="image" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_73_38" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 415px; width: 296px; left: 698px; top: 1px;z-index:2;" tm="631" ctrl-location="main"><div class="yibuFrameContent con_74_18  image_Style1  " style="overflow:visible;;" tm="632">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_con_74_18" tm="633" style="width: 296px; height: 415px;">
+        <a target="_self" tm="634" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1426.png" alt="ABOUT－pt" title="ABOUT－pt" id="img_smv_con_74_18" style="width: 296px; height:415px;" class="" tm="635">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="636">
+        $(function () {
+
+                InitImageSmv("con_74_18", "296", "415", "2");
+
+                 });
+    </script>
+
+</div></div><div id="smv_con_133_11" ctype="area" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="con_73_38" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 253px; width: 636px; left: 35px; top: 61px;z-index:7;" tm="637" ctrl-location="main"><div class="yibuFrameContent con_133_11  area_Style1  " style="overflow:visible;;" tm="638"><div class="w-container" data-effect-name="enterTop" tm="639">
+    <div class="smAreaC" id="smc_Area0" cid="con_133_11" tm="640">
+        <div id="smv_con_75_33" ctype="text" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item1" areaid="Area0" iscontainer="False" pvid="con_133_11" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 27px; width: 148px; left: 0px; top: 0px;z-index:3;" tm="641" ctrl-location="main"><div class="yibuFrameContent con_75_33  text_Style1  " style="overflow:hidden;;" tm="642"><div id="txt_con_75_33" style="height: 100%;" tm="643">
+    <div class="editableContent" id="txtc_con_75_33" style="height: 100%; word-wrap:break-word;" tm="644">
+        <p tm="645"><span style="color:#ffffff" tm="646"><span style="font-size:24px" tm="647">About us</span></span></p>
+
+    </div>
+</div>
+
+<script tm="648">
+    var tables = $(' #smv_con_75_33').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_con_77_19" ctype="button" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_133_11" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 38px; width: 126px; left: 0px; top: 215px;z-index:5;" tm="649" ctrl-location="main"><div class="yibuFrameContent con_77_19  button_Style1  " style="overflow:visible;;" tm="650"><a target="_self" href="#" class="w-button f-ellipsis" style="width: 124px; height: 36px; line-height: 36px;" tm="651">
+    <span class="w-button-position" tm="652">
+        <em class="w-button-text f-ellipsis" tm="653">
+            <i class="mw-iconfont w-button-icon w-icon-hide" tm="654"></i>查看更多
+        </em>
+    </span>
+</a>
+    <script type="text/javascript" tm="655">
+        $(function () {
+        });
+    </script>
+</div></div><div id="smv_con_91_20" ctype="companyIntroduction" class="esmartMargin smartAbs " cpid="32" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="con_133_11" tareaid="" re-direction="all" daxis="All" isdeletable="True" style="height: 103px; width: 636px; left: 0px; top: 56px;z-index:6;" tm="656" ctrl-location="main"><div class="yibuFrameContent con_91_20  companyIntroduction_Style1  " style="overflow:hidden;;" tm="657"><!--article info-->
+<div class="w-info" tm="658">We don't have guarded hierarchy<br tm="659">每个员工都是平等的，每一个时刻都是同事的合作伙伴。没有魅力等于温柔的心。<br tm="660">Food standards are the same,<br tm="661">in fatct.</div>
+<!--/article info-->
+</div></div>    </div>
+</div></div></div></div>
+<div id="bannerWrap_con_73_38" class="fullcolumn-outer" style="position: absolute; top: 0px; bottom: 0px; left: -216px; width: 1432px;" tm="662">
+</div>
+
+<script type="text/javascript" tm="663">
+
+    $(function () {
+        var resize = function () {
+            $("#smv_con_73_38 >.yibuFrameContent>.fullcolumn-inner").width($("#smv_con_73_38").parent().width());
+            $('#bannerWrap_con_73_38').fullScreen(function (t) {
+                if (VisitFromMobile()) {
+                    t.css("min-width", t.parent().width())
+                }
+            });
+        }
+        if (typeof (LayoutConverter) !== "undefined") {
+            LayoutConverter.CtrlJsVariableList.push({
+                CtrlId: "con_73_38",
+                ResizeFunc: resize,
+            });
+        } else {
+            $(window).resize(function (e) {
+                if (e.target == this) {
+                    resize();
+                }
+            });
+        }
+
+        resize();
+    });
+</script>
+</div></div></div></div><input type="hidden" name="__RequestVerificationToken" id="token__RequestVerificationToken" value="8pXJhrw2S1dnFdR9cxaNxQVtXLzIF4Do5McExC2mzLKMmlxSmmTO0bkFKkpKLiF2a1s324gaxyxxvjZ6aQLC3LHPtkZ73T0QfvgzBLXkfcw1" tm="664">
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(255, 255, 255); background-image: none; background-repeat: no-repeat;background-position:0 0; background:-moz-linear-gradient(top, none, none);background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));background:-o-linear-gradient(top, none, none);background:-ms-linear-gradient(top, none, none);background:linear-gradient(top, none, none);;
+         position: relative; width: 100%;min-width:1000px;background-size: auto;" bgscroll="none" tm="665" oriwidth="1432px" oriminwidth="1000px">
+        <div class=" footer" cpid="1133606" id="smv_Area3" style="width: 1000px; height: 275px; position: relative; margin: 0 auto;" tm="666" oriwidth="1000px" oriminwidth="0px">
+            <div id="smv_tem_10_20" ctype="banner" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area3" iscontainer="True" pvid="" tareaid="Area3" re-direction="y" daxis="Y" isdeletable="True" style="height: 274px; width: 100%; left: 0px; top: 0px;z-index:2;" tm="667" ctrl-location="footer"><div class="yibuFrameContent tem_10_20  banner_Style1  " style="overflow:visible;;" tm="668"><div class="fullcolumn-inner smAreaC" id="smc_Area0" cid="tem_10_20" style="width:1000px" tm="669" oriwidth="1000px" oriminwidth="0px">
+    <div id="smv_tem_76_16" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_10_20" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 112px; width: 108px; left: 9px; top: 94px;z-index:20;" tm="670" ctrl-location="footer"><div class="yibuFrameContent tem_76_16  area_Style1  " style="overflow:visible;;" tm="671"><div class="w-container" data-effect-name="enterTop" tm="672">
+    <div class="smAreaC" id="smc_Area0" cid="tem_76_16" tm="673">
+        <div id="smv_tem_12_40" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="tem_76_16" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 24px; width: 70px; left: 19px; top: 0px;z-index:3;" tm="674" ctrl-location="footer"><div class="yibuFrameContent tem_12_40  text_Style1  " style="overflow:hidden;;" tm="675"><div id="txt_tem_12_40" style="height: 100%;" tm="676">
+    <div class="editableContent" id="txtc_tem_12_40" style="height: 100%; word-wrap:break-word;" tm="677">
+        <p tm="678"><span style="color:#dddddd; font-family:Microsoft YaHei" tm="679"><span style="font-size:16px" tm="680">帮助中心</span></span></p>
+
+    </div>
+</div>
+
+<script tm="681">
+    var tables = $(' #smv_tem_12_40').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_tem_41_28" ctype="nav" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style9" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_76_16" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 108px; left: 0px; top: 32px;z-index:13;" tm="682" ctrl-location="footer"><div class="yibuFrameContent tem_41_28  nav_Style9  " style="overflow:visible;;" tm="683"><div class="nav_pc_t_9" id="nav_tem_41_28" tm="684">
+    <ul class="w-nav" navstyle="style10" tm="685">
+            <li class="sliding-box" style="left:-0px;top:-0px" tm="686">
+                <div class="sliding" style="height:26px" tm="687"></div>
+            </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="688">
+                    <div class="w-nav-item" tm="689">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="690">
+                            <span class="mw-iconfont" tm="691"></span>
+                            <span class="w-link-txt" tm="692">订餐指南</span>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="693">
+                    <div class="w-nav-item" tm="694">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="695">
+                            <span class="mw-iconfont" tm="696"></span>
+                            <span class="w-link-txt" tm="697">配送方式</span>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="698">
+                    <div class="w-nav-item" tm="699">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="700">
+                            <span class="mw-iconfont" tm="701"></span>
+                            <span class="w-link-txt" tm="702">支付方式</span>
+                        </a>
+
+                    </div>
+                </li>
+
+
+    </ul>
+</div>
+<script tm="703">
+    $(function () {
+        $('#nav_tem_41_28').find('.w-subnav').hide();
+        var $this, item, itemAll, index, itemH, goTo;
+        $('#nav_tem_41_28').off('mouseenter').on('mouseenter', '.w-nav-inner', function () {
+            itemAll = $('.w-nav').find('.w-subnav');
+            $this = $(this);
+            item = $this.find('.w-subnav');
+            item.fadeIn();
+            itemH = $this.height();
+            index = $this.index() - 1;
+            goTo = itemH * index;
+            $('#nav_tem_41_28').find('.sliding').hide().show().stop().animate({
+                top: goTo
+            }, 200, 'linear');
+        }).off('mouseleave').on('mouseleave', '.w-nav-inner', function () {
+            item = $(this).find('.w-subnav');
+            item.fadeOut(150);
+            $('#nav_tem_41_28').find('.sliding').stop().fadeOut(200);
+        });
+        SetNavSelectedStyle('nav_tem_41_28');//选中当前导航
+    });
+</script></div></div>    </div>
+</div></div></div><div id="smv_tem_77_19" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_10_20" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 114px; width: 108px; left: 198px; top: 93px;z-index:21;" tm="704" ctrl-location="footer"><div class="yibuFrameContent tem_77_19  area_Style1  " style="overflow:visible;;" tm="705"><div class="w-container" data-effect-name="enterTop" tm="706">
+    <div class="smAreaC" id="smc_Area0" cid="tem_77_19" tm="707">
+        <div id="smv_tem_13_54" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="tem_77_19" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 21px; width: 70px; left: 7px; top: 0px;z-index:3;" tm="708" ctrl-location="footer"><div class="yibuFrameContent tem_13_54  text_Style1  " style="overflow:hidden;;" tm="709"><div id="txt_tem_13_54" style="height: 100%;" tm="710">
+    <div class="editableContent" id="txtc_tem_13_54" style="height: 100%; word-wrap:break-word;" tm="711">
+        <p tm="712"><span style="color:#dddddd; font-family:Microsoft YaHei" tm="713"><span style="font-size:16px" tm="714">服务支持</span></span></p>
+
+    </div>
+</div>
+
+<script tm="715">
+    var tables = $(' #smv_tem_13_54').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_tem_42_28" ctype="nav" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style9" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_77_19" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 108px; left: 0px; top: 34px;z-index:13;" tm="716" ctrl-location="footer"><div class="yibuFrameContent tem_42_28  nav_Style9  " style="overflow:visible;;" tm="717"><div class="nav_pc_t_9" id="nav_tem_42_28" tm="718">
+    <ul class="w-nav" navstyle="style10" tm="719">
+            <li class="sliding-box" style="left:-0px;top:-0px" tm="720">
+                <div class="sliding" style="height:26px" tm="721"></div>
+            </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="722">
+                    <div class="w-nav-item" tm="723">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="724">
+                            <span class="mw-iconfont" tm="725"></span>
+                            <span class="w-link-txt" tm="726">售后反馈</span>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="727">
+                    <div class="w-nav-item" tm="728">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="729">
+                            <span class="mw-iconfont" tm="730"></span>
+                            <span class="w-link-txt" tm="731">意见反馈</span>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="732">
+                    <div class="w-nav-item" tm="733">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="734">
+                            <span class="mw-iconfont" tm="735"></span>
+                            <span class="w-link-txt" tm="736">手机版</span>
+                        </a>
+
+                    </div>
+                </li>
+
+
+    </ul>
+</div>
+<script tm="737">
+    $(function () {
+        $('#nav_tem_42_28').find('.w-subnav').hide();
+        var $this, item, itemAll, index, itemH, goTo;
+        $('#nav_tem_42_28').off('mouseenter').on('mouseenter', '.w-nav-inner', function () {
+            itemAll = $('.w-nav').find('.w-subnav');
+            $this = $(this);
+            item = $this.find('.w-subnav');
+            item.fadeIn();
+            itemH = $this.height();
+            index = $this.index() - 1;
+            goTo = itemH * index;
+            $('#nav_tem_42_28').find('.sliding').hide().show().stop().animate({
+                top: goTo
+            }, 200, 'linear');
+        }).off('mouseleave').on('mouseleave', '.w-nav-inner', function () {
+            item = $(this).find('.w-subnav');
+            item.fadeOut(150);
+            $('#nav_tem_42_28').find('.sliding').stop().fadeOut(200);
+        });
+        SetNavSelectedStyle('nav_tem_42_28');//选中当前导航
+    });
+</script></div></div>    </div>
+</div></div></div><div id="smv_tem_78_21" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_10_20" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 112px; width: 108px; left: 363px; top: 94px;z-index:22;" tm="738" ctrl-location="footer"><div class="yibuFrameContent tem_78_21  area_Style1  " style="overflow:visible;;" tm="739"><div class="w-container" data-effect-name="enterTop" tm="740">
+    <div class="smAreaC" id="smc_Area0" cid="tem_78_21" tm="741">
+        <div id="smv_tem_14_59" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="tem_78_21" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 21px; width: 70px; left: 8px; top: 0px;z-index:3;" tm="742" ctrl-location="footer"><div class="yibuFrameContent tem_14_59  text_Style1  " style="overflow:hidden;;" tm="743"><div id="txt_tem_14_59" style="height: 100%;" tm="744">
+    <div class="editableContent" id="txtc_tem_14_59" style="height: 100%; word-wrap:break-word;" tm="745">
+        <p tm="746"><span style="color:#dddddd; font-family:Microsoft YaHei" tm="747"><span style="font-size:16px" tm="748">关于我们</span></span></p>
+
+    </div>
+</div>
+
+<script tm="749">
+    var tables = $(' #smv_tem_14_59').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_tem_43_28" ctype="nav" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style9" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_78_21" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 80px; width: 108px; left: 0px; top: 32px;z-index:13;" tm="750" ctrl-location="footer"><div class="yibuFrameContent tem_43_28  nav_Style9  " style="overflow:visible;;" tm="751"><div class="nav_pc_t_9" id="nav_tem_43_28" tm="752">
+    <ul class="w-nav" navstyle="style10" tm="753">
+            <li class="sliding-box" style="left:-0px;top:-0px" tm="754">
+                <div class="sliding" style="height:26px" tm="755"></div>
+            </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="756">
+                    <div class="w-nav-item" tm="757">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="758">
+                            <span class="mw-iconfont" tm="759"></span>
+                            <span class="w-link-txt" tm="760">了解我们</span>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="761">
+                    <div class="w-nav-item" tm="762">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="763">
+                            <span class="mw-iconfont" tm="764"></span>
+                            <span class="w-link-txt" tm="765">联系我们</span>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="w-nav-inner" style="height:33.3333333333333%;line-height:26px" tm="766">
+                    <div class="w-nav-item" tm="767">
+                        <a href="#" target="_self" class="w-nav-item-link" tm="768">
+                            <span class="mw-iconfont" tm="769"></span>
+                            <span class="w-link-txt" tm="770">管理后台</span>
+                        </a>
+
+                    </div>
+                </li>
+
+
+    </ul>
+</div>
+<script tm="771">
+    $(function () {
+        $('#nav_tem_43_28').find('.w-subnav').hide();
+        var $this, item, itemAll, index, itemH, goTo;
+        $('#nav_tem_43_28').off('mouseenter').on('mouseenter', '.w-nav-inner', function () {
+            itemAll = $('.w-nav').find('.w-subnav');
+            $this = $(this);
+            item = $this.find('.w-subnav');
+            item.fadeIn();
+            itemH = $this.height();
+            index = $this.index() - 1;
+            goTo = itemH * index;
+            $('#nav_tem_43_28').find('.sliding').hide().show().stop().animate({
+                top: goTo
+            }, 200, 'linear');
+        }).off('mouseleave').on('mouseleave', '.w-nav-inner', function () {
+            item = $(this).find('.w-subnav');
+            item.fadeOut(150);
+            $('#nav_tem_43_28').find('.sliding').stop().fadeOut(200);
+        });
+        SetNavSelectedStyle('nav_tem_43_28');//选中当前导航
+    });
+</script></div></div>    </div>
+</div></div></div><div id="smv_tem_75_16" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_10_20" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 121px; width: 470px; left: 530px; top: 74px;z-index:19;" tm="772" ctrl-location="footer"><div class="yibuFrameContent tem_75_16  area_Style1  " style="overflow:visible;;" tm="773"><div class="w-container" data-effect-name="enterTop" tm="774">
+    <div class="smAreaC" id="smc_Area0" cid="tem_75_16" tm="775">
+        <div id="smv_tem_73_28" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_75_16" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 121px; width: 111px; left: 0px; top: 0px;z-index:17;" tm="776" ctrl-location="footer"><div class="yibuFrameContent tem_73_28  area_Style1  " style="overflow:visible;;" tm="777"><div class="w-container" data-effect-name="enterTop" tm="778">
+    <div class="smAreaC" id="smc_Area0" cid="tem_73_28" tm="779">
+        <div id="smv_tem_18_32" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item4" areaid="Area0" iscontainer="False" pvid="tem_73_28" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 21px; width: 99px; left: 6px; top: 0px;z-index:3;" tm="780" ctrl-location="footer"><div class="yibuFrameContent tem_18_32  text_Style1  " style="overflow:hidden;;" tm="781"><div id="txt_tem_18_32" style="height: 100%;" tm="782">
+    <div class="editableContent" id="txtc_tem_18_32" style="height: 100%; word-wrap:break-word;" tm="783">
+        <p tm="784"><span style="font-size:12px" tm="785"><span style="color:#dddddd; font-family:Microsoft YaHei" tm="786">扫码有惊喜</span></span></p>
+
+    </div>
+</div>
+
+<script tm="787">
+    var tables = $(' #smv_tem_18_32').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div><div id="smv_tem_22_16" ctype="image" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_73_28" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 90px; width: 86px; left: 0px; top: 31px;z-index:1;" tm="788" ctrl-location="footer"><div class="yibuFrameContent tem_22_16  image_Style1  " style="overflow:visible;;" tm="789">
+    <div class="w-image-box image-clip-wrap" data-filltype="2" id="div_tem_22_16" tm="790" style="width: 86px; height: 90px;">
+        <a target="_self" tm="791" style="width: 100%; height: 100%;">
+            <img src="./index_files/-1187.png" alt="QR" title="QR" id="img_smv_tem_22_16" style="width: 86px; height:90px;" class="" tm="792">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="793">
+        $(function () {
+
+                InitImageSmv("tem_22_16", "86", "90", "2");
+
+                 });
+    </script>
+
+</div></div>    </div>
+</div></div></div><div id="smv_tem_74_48" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_75_16" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 90px; width: 247px; left: 208px; top: 19px;z-index:18;" tm="794" ctrl-location="footer"><div class="yibuFrameContent tem_74_48  area_Style1  " style="overflow:visible;;" tm="795"><div class="w-container" data-effect-name="enterTop" tm="796">
+    <div class="smAreaC" id="smc_Area0" cid="tem_74_48" tm="797">
+        <div id="smv_tem_26_28" ctype="area" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="True" pvid="tem_74_48" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 40px; width: 152px; left: 0px; top: 49px;z-index:12;" tm="798" ctrl-location="footer"><div class="yibuFrameContent tem_26_28  area_Style1  " style="overflow:visible;;" tm="799"><div class="w-container" data-effect-name="enterTop" tm="800">
+    <div class="smAreaC" id="smc_Area0" cid="tem_26_28" tm="801">
+        <div id="smv_tem_27_13" ctype="image" smanim="{&quot;delay&quot;:0.75,&quot;duration&quot;:0.75,&quot;direction&quot;:&quot;&quot;,&quot;animationName&quot;:&quot;rubberBand&quot;,&quot;infinite&quot;:&quot;infinite&quot;}" class="esmartMargin smartAbs animated" cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_26_28" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 22px; width: 22px; left: 15px; top: 8px;z-index:2; transform:rotate(12deg);-ms-transform:rotate(12deg);-webkit-transform:rotate(12deg);transform-origin: 50% 50%;-ms-transform-origin: 50% 50%;-webkit-transform-origin: 50% 50%;" tm="802" ctrl-location="footer"><div class="yibuFrameContent tem_27_13  image_Style1  " style="overflow:visible;;" tm="803">
+    <div class="w-image-box image-clip-wrap" data-filltype="0" id="div_tem_27_13" tm="804" style="height: 22px; width: 22px;">
+        <a target="_self" tm="805">
+            <img src="./index_files/-1188.png" alt="dh" title="dh" id="img_smv_tem_27_13" style="width: 22px; height:22px;" class="" tm="806">
+        </a>
+    </div>
+
+    <script type="text/javascript" tm="807">
+        $(function () {
+
+                InitImageSmv("tem_27_13", "22", "22", "0");
+
+                 });
+    </script>
+
+</div></div><div id="smv_tem_28_40" ctype="text" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item3" areaid="Area0" iscontainer="False" pvid="tem_26_28" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 21px; width: 80px; left: 52px; top: 11px;z-index:3;" tm="808" ctrl-location="footer"><div class="yibuFrameContent tem_28_40  text_Style1  " style="overflow:hidden;;" tm="809"><div id="txt_tem_28_40" style="height: 100%;" tm="810">
+    <div class="editableContent" id="txtc_tem_28_40" style="height: 100%; word-wrap:break-word;" tm="811">
+        <p tm="812"><span style="color:#d2b543" tm="813"><span style="font-family:&quot;Microsoft YaHei&quot;; font-size:14px" tm="814">24小时在线</span></span></p>
+
+    </div>
+</div>
+
+<script tm="815">
+    var tables = $(' #smv_tem_28_40').find('table')
+    for (var i = 0; i < tables.length; i++) {
+        var tab = tables[i]
+        var borderWidth = $(tab).attr('border')
+        if (borderWidth <= 0 || !borderWidth) {
+            console.log(tab)
+            $(tab).addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tbody").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("thead").children("tr").children("th").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("td").addClass('hidden-border')
+            $(tab).children("tfoot").children("tr").children("th").addClass('hidden-border')
+        }
+    }
+</script></div></div>    </div>
+</div></div></div><div id="smv_tem_72_46" ctype="companyinfo" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style1" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_74_48" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 40px; width: 246px; left: 0px; top: 0px;z-index:16;" tm="816" ctrl-location="footer"><div class="yibuFrameContent tem_72_46  companyinfo_Style1  " style="overflow:hidden;;" tm="817"><ul class="w-company-info iconStyle2" tm="818">
+        <li class="company-info-item" tm="819">
+            <a href="tel:0108888888" style="padding-left:0px;margin-left: 0px;" tm="820">
+                <span class="company-info-icon   mw-icon-hide " tm="821">
+                    <i class="ltd-icon icon-dianhua" tm="822"></i>
+                 </span><span class="company-text" tm="823"><span class="company-info-title" style="white-space:pre" tm="824"></span><span class="company-info-text" tm="825">0108888888</span>
+                </span>
+            </a>
+        </li>
+</ul></div></div>    </div>
+</div></div></div>    </div>
+</div></div></div><div id="smv_tem_70_25" ctype="companyinfo" class="esmartMargin smartAbs " cpid="1133606" cstyle="Style4" ccolor="Item0" areaid="Area0" iscontainer="False" pvid="tem_10_20" tareaid="Area3" re-direction="all" daxis="All" isdeletable="True" style="height: 23px; width: 1000px; left: 0px; top: 232px;z-index:14;" tm="826" ctrl-location="footer"><div class="yibuFrameContent tem_70_25  companyinfo_Style4  " style="overflow:hidden;;" tm="827"><div class="w-company-info iconStyle1" tm="828">
+        <span class="company-info-item" tm="829">
+            <a href="javascript:void(0)" tm="830">
+                <span class="icon company-info-icon    mw-icon-hide " tm="831">
+                    <i class="ltd-icon icon-gongsi" tm="832"></i>
+                </span>
+                <span class="company-info-title" style="white-space:pre" tm="833">版权所有：</span>
+                <span class="company-info-text" tm="834">美食有限公司</span>
+            </a>
+        </span>
+</div></div></div></div>
+<div id="bannerWrap_tem_10_20" class="fullcolumn-outer" style="position: absolute; top: 0px; bottom: 0px; left: -216px; width: 1432px;" tm="835">
+</div>
+
+<script type="text/javascript" tm="836">
+
+    $(function () {
+        var resize = function () {
+            $("#smv_tem_10_20 >.yibuFrameContent>.fullcolumn-inner").width($("#smv_tem_10_20").parent().width());
+            $('#bannerWrap_tem_10_20').fullScreen(function (t) {
+                if (VisitFromMobile()) {
+                    t.css("min-width", t.parent().width())
+                }
+            });
+        }
+        if (typeof (LayoutConverter) !== "undefined") {
+            LayoutConverter.CtrlJsVariableList.push({
+                CtrlId: "tem_10_20",
+                ResizeFunc: resize,
+            });
+        } else {
+            $(window).resize(function (e) {
+                if (e.target == this) {
+                    resize();
+                }
+            });
+        }
+
+        resize();
+    });
+</script>
+</div></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="./index_files/lz-parallax.min.js" type="text/javascript" tm="837"></script>        <script type="text/javascript" tm="838">
+            $(function () {
+                jsmart.autoContainer = 0;
+                jsmart.autoComputeCallback = function () {
+                    if (jsmart.autoContainer) {
+                        clearTimeout(jsmart.autoContainer);
+                        jsmart.autoContainer = 0;
+                    }
+                    jsmart.autoContainer = setTimeout(function () {
+                        if (window.refreshBgScroll) {
+                            window.refreshBgScroll();
+                        }
+                    }, 50);
+                }
+                $("div[bgscroll]").each(function () {
+                    var bgscroll = $(this).attr("bgscroll");
+                    $(this).lzparallax({ effect: bgscroll, autoPosition: false, clone: true });
+                });
+            });
+            window.refreshBgScroll = function () {
+                $("div[bgscroll]").each(function () {
+                    var bgscroll = $(this).attr("bgscroll");
+                    var bgclear = $(this).attr("bgclear");
+                    $(this).removeAttr("bgclear");
+                    $(this).lzparallax("refresh", bgscroll, bgclear);
+                });
+            }
+        </script>
+
+        <div style="text-align:center;width: 100%;padding-top: 4px;font-size: 12; background-color: #ffffff;font-family:Tahoma;opacity:1;position: relative; z-index: 3;" id="all-icp-bottom" tm="839">
+            <div class="page-bottom--area style1" id="b_style1" style="display: block; background: rgb(255, 255, 255);" tm="840">
+                <div class="bottom-content" tm="841" style="text-align: center;">
+                    <div class="top-area" tm="842" style="margin-bottom: 0px;">
+                        <div class="icp-area display-style common-style bottom-words" style="margin-bottom: 1px; color: rgb(152, 152, 152); font-size: 12px; display: none;" tm="843">
+                            <a target="_blank" class="bottom-words" href="https://beian.miit.gov.cn/" tm="844" style="color: rgb(152, 152, 152);">
+                                <span class="icp-words bottom-words" tm="845" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                        <div class="divider display-style common-style bottom-border" style="vertical-align: -7px; background: rgb(152, 152, 152); height: 12px; font-size: 12px; display: none;" tm="846"></div>
+                        <div class="ga-area display-style common-style bottom-words" tm="847" style="color: rgb(152, 152, 152); font-size: 12px; display: none;">
+                            <a target="_blank" class="bottom-words ga_link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" tm="848" style="color: rgb(152, 152, 152);">
+                                <img src="./index_files/ga_icon.png" alt="" tm="849" style="width: 12px; height: 12px;"><span class="ga-words bottom-words" tm="850" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-bottom--area style2" id="b_style2" style="display: none; background: rgb(255, 255, 255);" tm="872">
+                <div class="bottom-content" tm="873" style="text-align: center;">
+                    <div class="top-area" tm="874" style="margin-bottom: 0px;">
+                        <div class="ga-area display-style common-style bottom-words" tm="875" style="color: rgb(152, 152, 152); font-size: 12px; display: none;">
+                            <a target="_blank" class="bottom-words ga_link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" tm="876" style="color: rgb(152, 152, 152);">
+                                <img src="./index_files/ga_icon.png" alt="" tm="877" style="width: 12px; height: 12px;"><span class="ga-words bottom-words" tm="878" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                        <div class="divider display-style common-style bottom-border" style="vertical-align: -7px; background: rgb(152, 152, 152); height: 12px; font-size: 12px;" tm="879"></div>
+                        <div class="icp-area display-style common-style bottom-words" style="margin-bottom: 1px; color: rgb(152, 152, 152); font-size: 12px; display: none;" tm="880">
+                            <a target="_blank" class="bottom-words" href="https://beian.miit.gov.cn/" tm="881" style="color: rgb(152, 152, 152);">
+                                <span class="icp-words bottom-words" tm="882" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-bottom--area style3" id="b_style3" style="display: none; background: rgb(255, 255, 255);" tm="904">
+                <div class="bottom-content" tm="905" style="text-align: center;">
+                    <div class="top-area" tm="906" style="margin-bottom: 0px;">
+                        <div class="ga-area display-style common-style bottom-words" tm="907" style="color: rgb(152, 152, 152); font-size: 12px; display: none;">
+                            <a target="_blank" class="bottom-words ga_link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" tm="908" style="color: rgb(152, 152, 152);">
+                                <img src="./index_files/ga_icon.png" alt="" tm="909" style="width: 12px; height: 12px;"><span class="ga-words bottom-words" tm="910" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                        <div class="divider display-style common-style bottom-border" style="vertical-align: -7px; background: rgb(152, 152, 152); height: 12px; font-size: 12px;" tm="911"></div>
+                        <div class="copyright-area display-style common-style bottom-words" style="margin-top: 2px; color: rgb(152, 152, 152); font-size: 12px;" tm="912">版权所有© 美食有限公司</div>
+                        <div class="divider display-style common-style bottom-border" style="vertical-align: -7px; background: rgb(152, 152, 152); height: 12px; font-size: 12px;" tm="913"></div>
+                        <div class="icp-area display-style common-style bottom-words" style="margin-bottom: 1px; color: rgb(152, 152, 152); font-size: 12px; display: none;" tm="914">
+                            <a target="_blank" class="bottom-words" href="https://beian.miit.gov.cn/" tm="915" style="color: rgb(152, 152, 152);">
+                                <span class="icp-words bottom-words" tm="916" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="page-bottom--area style4" id="b_style4" style="display: none; background: rgb(255, 255, 255);" tm="938">
+                <div class="bottom-content" tm="939" style="text-align: center;">
+                    <div class="top-area" tm="940" style="margin-bottom: 0px;">
+                        <div class="copyright-area display-style common-style bottom-words" style="margin-top: 2px; color: rgb(152, 152, 152); font-size: 12px;" tm="941">版权所有© 美食有限公司</div>
+                        <div class="divider display-style common-style bottom-border" style="vertical-align: -7px; background: rgb(152, 152, 152); height: 12px; font-size: 12px;" tm="942"></div>
+                        <div class="icp-area display-style common-style bottom-words" style="margin-bottom: 1px; color: rgb(152, 152, 152); font-size: 12px; display: none;" tm="943">
+                            <a target="_blank" class="bottom-words" href="https://beian.miit.gov.cn/" tm="944" style="color: rgb(152, 152, 152);">
+                                <span class="icp-words bottom-words" tm="945" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                        <div class="divider display-style common-style bottom-border" style="vertical-align: -7px; background: rgb(152, 152, 152); height: 12px; font-size: 12px; display: none;" tm="946"></div>
+                        <div class="ga-area display-style common-style bottom-words" tm="947" style="color: rgb(152, 152, 152); font-size: 12px; display: none;">
+                            <a target="_blank" class="bottom-words ga_link" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" tm="948" style="color: rgb(152, 152, 152);">
+                                <img src="./index_files/ga_icon.png" alt="" tm="949" style="width: 12px; height: 12px;"><span class="ga-words bottom-words" tm="950" style="color: rgb(152, 152, 152);"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script type="text/javascript" tm="972">
+
+
+
+        $(function () {
+            // 延迟加载之后移除延迟属性，以便于被其他代码加载
+            $("img[loading='lazy']").on('load', function () {
+                $(this).removeAttr('loading')
+            }).each(function () {
+                if (this.complete) {
+                    $(this).load()
+                }
+            })
+
+            $("img.lazyload").lazyload({ skip_invisible: false, effect: "fadeIn", failure_limit: 15, threshold: 100 });
+            // 推后到OnAdjustFinished 中开启动画
+            // 非响应式正常初始化
+            if (typeof (LayoutConverter) === "undefined") {
+                $('.animated').smanimate();
+            }
+            $('.smartRecpt').smrecompute();
+            setCurrentPageTitle('首页', 2);
+            xwezhan.initWz();
+
+            if ($("#txtDeviceSwitchEnabled").val() == "hide") {
+                $(".m-deviceSwitch").css("display", "none");
+            }
+
+            // 隐藏备案信息展示
+            $('div[ctype=companyinfo]').find('.company-info-title').each(function (i, it) {
+                if ($(it).text().indexOf('备案') > -1 || $(it).next().text().toLowerCase().indexOf('icp') > -1) {
+                    $(it).parent().parent().css('display', 'none');
+                }
+            })
+            var info = {
+                icp: "",
+                ga: '',
+                copyright: '美食有限公司' != "" ? '版权所有© ' + '美食有限公司' : "",
+                color: '#989898',
+                background: '#ffffff',
+                powerby: 'Powered by ' + 'CloudDream',
+                ipv6: 'True' == 'True',
+                ali: "True" == "True",
+                style: 'style1',
+                align: 'center',
+                fontsize:12
+        };
+
+            _initData()
+            _initShow()
+
+            function _initData() {
+                var linkUrl = "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode="
+                if (info.ga != "") {
+                    linkUrl = linkUrl + info.ga.substring(5, 19);
+                }
+                $('.ga_link').attr('href', linkUrl);
+                $('.bottom-content').css({ 'text-align': info.align })
+                $('.icp-area .icp-words').text(info.icp)
+                $('.ga-area .ga-words').text(info.ga)
+                $('.copyright-area').text(info.copyright)
+                $('.powerby-area').find('span').text(info.powerby)
+                $('.page-bottom--area').css({ background: info.background })
+                $('.bottom-words').css({ color: info.color })
+                $('.bottom-border').css({ background: info.color })
+                $('.ipv6-box').css({ 'border-color': info.color })
+                $('.ali-area').find('svg g').css({ 'fill': info.color, height: info.fontsize, width: parseInt(info.fontsize * 55 / 13 + 'px') })
+                $('.ga-area').find('img').css({ width: info.fontszie + 'px' })
+
+                $('.ipv-area').css({ 'line-height': info.fontsize + 'px' })
+                $('.ali-area').find('svg g').css({ 'fill': info.color })
+                $('.divider').css({ height: info.fontsize + 'px' })
+                $('.ali-area').find('svg').css({ height: info.fontsize, width: parseInt(info.fontsize * 55 / 13 + 'px') })
+                $('.ga-area').find('img').css({ width: info.fontsize + 'px', height: info.fontsize + 'px' })
+                $('.page-bottom--area').find('.common-style').css({ fontSize: info.fontsize + 'px' })
+            }
+
+            function _initShow() {
+                if ("True" == "False") {
+                    $('.top-area').css('display', 'none');
+                }
+                if (info.style === 'style1') {
+                    $('#b_style1').css('display', 'block');
+                    if (!info.ga) {
+                        $('.ga-area').hide()
+                        $('.ga-area')
+                            .prev('.divider')
+                            .hide()
+                    }
+                    if (!info.icp) {
+                        $('.icp-area').hide()
+                        $('.icp-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                }
+                if (info.style === 'style2') {
+                    $('#b_style2').css('display', 'block');
+                    if (!info.ga) {
+                        $('.ga-area').hide()
+                        $('.ga-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                    if (!info.icp) {
+                        $('.icp-area').hide()
+                        $('.icp-area')
+                            .prev('.divider')
+                            .hide()
+                    }
+                }
+                if (info.style === 'style3') {
+                    $('#b_style3').css('display', 'block');
+                    if (!info.ga) {
+                        $('.ga-area').hide()
+                        $('.ga-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                    if (!info.copyright) {
+                        $('.copyright-area').hide()
+                        $('.copyright-area')
+                            .prev('.divider')
+                            .hide()
+                    }
+                    if (!info.icp) {
+                        $('.icp-area').hide()
+                        $('.icp-area')
+                            .prev('.divider')
+                            .hide()
+                        $('.copyright-area').hide()
+                        $('.copyright-area')
+                            .prev('.divider')
+                            .hide()
+                    }
+                    if (!info.ga && !info.copyright) {
+                        $('.copyright-area').hide()
+                        $('.copyright-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                }
+                if (info.style === 'style4') {
+                    $('#b_style4').css('display', 'block');
+                    if (!info.icp) {
+                        $('.icp-area').hide()
+                        $('.icp-area')
+                            .prev('.divider')
+                            .hide()
+                        $('.copyright-area').hide()
+                        $('.copyright-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                    if (!info.copyright) {
+                        $('.copyright-area').hide()
+                        $('.copyright-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                    if (!info.ga) {
+                        $('.ga-area').hide()
+                        $('.ga-area')
+                            .prev('.divider')
+                            .hide()
+                    }
+                    if (!info.icp && !info.copyright) {
+                        $('.icp-area').hide()
+                        $('.icp-area')
+                            .next('.divider')
+                            .hide()
+                    }
+                }
+                if ("True".toLowerCase() == "false") {
+                    $('.ali-area').hide()
+                    $('.ali-area')
+                        .next('.divider')
+                        .hide()
+                }
+                if ("True".toLowerCase() == "false") {
+                    $('.ipv-area').hide()
+                    $('.ipv-area')
+                        .prev('.divider')
+                        .hide()
+                }
+                if ("True".toLowerCase() == "false") {
+                    $('.powerby-area').hide()
+                    $('.powerby-area')
+                        .prev('.divider')
+                        .hide()
+                }
+                if ("True".toLowerCase() == "false" && "True".toLowerCase() == "false") {
+                    $('.ipv-area').hide()
+                    $('.ipv-area')
+                        .next('.divider')
+                        .hide()
+                }
+                if ((!info.ga && !info.icp) || ("True".toLowerCase() == "false" && "True".toLowerCase() == "false" && "True".toLowerCase() == "false")) {
+                    $('.top-area').css({ 'margin-bottom': 0 })
+                }
+                if (!info.ga && !info.icp && "True".toLowerCase() == "false" && "True".toLowerCase() == "false" && "True".toLowerCase() == "false") {
+                    $('#all-icp-bottom').css({ 'display': 'none' });
+                }
+            }
+        });
+    </script>
+
+    <div id="systemDialogLayer" style="position:relative;z-index:999999" tm="973"></div>
+
+
+<script src="./index_files/polyfill.min.js" type="text/javascript" tm="974"></script><link href="./index_files/slicknav.css" rel="stylesheet" type="text/css" tm="975"><script src="./index_files/jquery.slicknav.min.js" type="text/javascript" tm="976"></script><script src="./index_files/modernizr.min.js" type="text/javascript" tm="977"></script>            <script type="text/javascript" src="./index_files/Core-Babeled.js" tm="978"></script>
+
+
+
+</body>
