@@ -1,19 +1,19 @@
-package top.naccl.service;
+package top.naccl.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import top.naccl.bean.DiningCarDTO;
-import top.naccl.dao.DiningCarRepository;
 import top.naccl.bean.DiningCar;
 import top.naccl.bean.Food;
 import top.naccl.bean.User;
+import top.naccl.dao.DiningCarRepository;
+import top.naccl.service.DiningCarService;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * @Description: 点餐管理操作实现类
@@ -30,6 +30,10 @@ public class DiningCarServiceImpl implements DiningCarService {
 	public List<Food> getUserFoods(Integer id) {
 
 		return diningCarRepository.findByUserId(id);
+	}
+
+	public Optional<DiningCar> findById(Integer cartId) {
+		return diningCarRepository.findById(cartId);
 	}
 
 	@Override
@@ -67,6 +71,12 @@ public class DiningCarServiceImpl implements DiningCarService {
 		return result;
 	}
 
+	@Override
+	public List<String[]> getOrdersV2BYCode(String ordCode) {
+		List<String[]> result = diningCarRepository.findOrderUserByCode(ordCode);
+		return result;
+	}
+
 	@Transactional
 	@Override
 	public DiningCar saveDiningCar(DiningCar diningCar) {
@@ -79,8 +89,20 @@ public class DiningCarServiceImpl implements DiningCarService {
 		diningCarRepository.deleteByUserIdAndFoodId(userId, foodId);
 	}
 
-	@Override
-	public DiningCar getDriverCarByFoodId(Integer foodId) {
-		return diningCarRepository.findByUserIdAndFoodId(foodId);
+	// 根据 foodId 删除所有相关的 diningcar 行
+	public void deleteByFoodId(Integer foodId){
+		diningCarRepository.deleteByFoodId(foodId);
 	}
+
+	@Override
+	public DiningCar getDriverCarByFoodId(Integer foodId, Integer userId) {
+		return diningCarRepository.findByUserIdAndFoodId(foodId, userId);
+	}
+
+	@Override
+	public List<DiningCar> findAllByUserId(Integer userId) {
+		return diningCarRepository.findAllByUserId(userId);
+	}
+
+
 }
