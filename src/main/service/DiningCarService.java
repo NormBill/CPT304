@@ -8,10 +8,13 @@ import top.naccl.bean.User;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface DiningCarService {
 
 	List<Food> getUserFoods(Integer id);
+
+	Optional<DiningCar> findById(Integer cartId);
 
 	Page<Food> getUserFoods(Integer id, Pageable pageable);
 
@@ -19,9 +22,16 @@ public interface DiningCarService {
 
 	List<String[]> getOrdersV2();
 
+	List<String[]> getOrdersV2BYCode(String ordCode);
+
 	DiningCar saveDiningCar(DiningCar diningCar);
 
 	void deleteDiningCarByUserIdAndFoodId(Integer userId, Integer foodId);
 
-	DiningCar getDriverCarByFoodId(Integer foodId);
+	// Delete all relevant diningcar rows based on foodId
+	void deleteByFoodId(Integer foodId);
+
+	DiningCar getDriverCarByFoodId(Integer foodId, Integer userId);
+
+	List<DiningCar> findAllByUserId(Integer userId);
 }
