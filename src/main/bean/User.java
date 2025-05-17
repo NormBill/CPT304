@@ -20,7 +20,7 @@ public class User {
 	private Integer id;
 
 	@Column(nullable = false)
-	private String username;
+	private String username;//不能为空
 
 	@Column(nullable = false)
 	private String password;
