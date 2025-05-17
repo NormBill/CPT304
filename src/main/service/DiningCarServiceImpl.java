@@ -28,7 +28,6 @@ public class DiningCarServiceImpl implements DiningCarService {
 
 	@Override
 	public List<Food> getUserFoods(Integer id) {
-
 		return diningCarRepository.findByUserId(id);
 	}
 
@@ -39,13 +38,14 @@ public class DiningCarServiceImpl implements DiningCarService {
 
 	@Override
 	public Map<User, List<Food>> getOrders() {
-		//public Map<User, List<Food>> getOrders() {
-		/*
-		List<DiningCar> diningCars = diningCarRepository.findGroupUser();//按用户分组 获取每一个用户的全部点餐车
+		List<DiningCar> diningCars = diningCarRepository.findGroupUser();
 		Map<User, List<Food>> map = new LinkedHashMap<>();
-		for (DiningCar diningCar : diningCars) {//遍历每一个用户的全部点餐车
-			List<Food> foods = getUserFoods(diningCar.getUser().getId());//获取该用户的全部菜品
-			Food total = new Food();//添加一个合计价格 好麻烦直接这样写了
+		for (DiningCar diningCar : diningCars) {
+			if (diningCar.getUser() == null) {
+				continue;
+			}
+			List<Food> foods = getUserFoods(diningCar.getUser().getId());
+			Food total = new Food();
 			total.setName("合计");
 			total.setPrice(diningCarRepository.sumPrice(diningCar.getUser().getId()));
 			total.setComment(-1);
@@ -53,12 +53,6 @@ public class DiningCarServiceImpl implements DiningCarService {
 			map.put(diningCar.getUser(), foods);
 		}
 		return map;
-		*/
-
-		List<String[]> result = diningCarRepository.findGroupUser();
-
-
-		return null;
 	}
 
 	@Override
@@ -80,7 +74,7 @@ public class DiningCarServiceImpl implements DiningCarService {
 	}
 
 	@Override
-	public DiningCar getDriverCarByFoodId(Integer foodId) {
-		return diningCarRepository.findByUserIdAndFoodId(foodId);
+	public DiningCar getDriverCarByFoodId(Integer foodId, Integer userId) {
+		return diningCarRepository.findByUserIdAndFoodId(userId, foodId);
 	}
 }
