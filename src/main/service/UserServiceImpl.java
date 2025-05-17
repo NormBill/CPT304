@@ -48,19 +48,29 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Transactional
-	@Override
-	public User updateUser(Integer id, User user) {
-		User u = userRepository.findById(id).orElse(null);
-		if (u == null) {
-			throw new NotFoundException("该用户不存在");
-		}
-		BeanUtils.copyProperties(user, u);
-		return userRepository.save(u);
-	}
+	 @Override
+    public void deleteUser(Integer id) {
+        Objects.requireNonNull(id, "用户ID不能为空");
 
-	@Transactional
-	@Override
-	public void deleteUser(Integer id) {
-		userRepository.deleteById(id);
-	}
+        if (!userRepository.existsById(id)) {
+            throw new NotFoundException("ID为 " + id + " 的用户不存在，无法删除");
+        }
+        userRepository.deleteById(id);
+    }
+
+	// @Override
+	// public User updateUser(Integer id, User user) {
+	// 	User u = userRepository.findById(id).orElse(null);
+	// 	if (u == null) {
+	// 		throw new NotFoundException("该用户不存在");
+	// 	}
+	// 	BeanUtils.copyProperties(user, u);
+	// 	return userRepository.save(u);
+	// }
+
+	// @Transactional
+	// @Override
+	// public void deleteUser(Integer id) {
+	// 	userRepository.deleteById(id);
+	// }
 }
